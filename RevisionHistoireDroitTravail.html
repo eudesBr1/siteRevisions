@@ -35,12 +35,11 @@
                 <div id="progress-bar" class="bg-gradient-to-r from-indigo-500 to-purple-500 h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
             </div>
 
-            <div class="flex gap-1.5 overflow-x-auto pb-1 no-scrollbar text-xs">
+         <div class="flex gap-1.5 overflow-x-auto pb-1 no-scrollbar text-xs">
                 <button onclick="switchSection('all')" id="tab-all" class="tab-btn bg-indigo-600 text-white px-3.5 py-2 rounded-xl font-bold shrink-0 shadow-sm transition-all">Tout afficher</button>
+                <button onclick="switchSection('INTRO')" id="tab-INTRO" class="tab-btn bg-slate-100 text-slate-600 px-3.5 py-2 rounded-xl font-bold shrink-0 transition-all">Intro</button>
                 <button onclick="switchSection('P1')" id="tab-P1" class="tab-btn bg-slate-100 text-slate-600 px-3.5 py-2 rounded-xl font-bold shrink-0 transition-all">P1</button>
-                <button onclick="switchSection('P2.1')" id="tab-P2.1" class="tab-btn bg-slate-100 text-slate-600 px-3.5 py-2 rounded-xl font-bold shrink-0 transition-all">P2.1</button>
-                <button onclick="switchSection('P2.2')" id="tab-P2.2" class="tab-btn bg-slate-100 text-slate-600 px-3.5 py-2 rounded-xl font-bold shrink-0 transition-all">P2.2</button>
-                <button onclick="switchSection('P2.3')" id="tab-P2.3" class="tab-btn bg-slate-100 text-slate-600 px-3.5 py-2 rounded-xl font-bold shrink-0 transition-all">P2.3</button>
+                <button onclick="switchSection('P2')" id="tab-P2" class="tab-btn bg-slate-100 text-slate-600 px-3.5 py-2 rounded-xl font-bold shrink-0 transition-all">P2</button>
                 <button onclick="switchSection('P3')" id="tab-P3" class="tab-btn bg-slate-100 text-slate-600 px-3.5 py-2 rounded-xl font-bold shrink-0 transition-all">P3</button>
             </div>
             
@@ -59,12 +58,1412 @@
 
     <script>
 const questionsData = [
-    
+    {
+        id: 1,
+        section: "INTRO",
+        label: "Question 1 / 100",
+        text: "Selon la définition du Pr. Jacques Bouveresse citée dans le cours, de quoi le droit du travail est-il l'ensemble des règles ?",
+        options: {
+            A: "Des règles organisant uniquement les relations collectives au sein des organisations syndicales.",
+            B: "Des principes généraux du droit civil applicables aux contrats de louage de services.",
+            C: "Des dispositions pénales sanctionnant les infractions commises dans les manufactures.",
+            D: "Des règles régissant les relations professionnelles, individuelles ou collectives, entre employeurs et salariés."
+        },
+        correct: "D",
+        explanation: "Selon le Pr. Bouveresse, le droit du travail est l'ensemble des règles régissant les relations professionnelles, qu'elles soient individuelles ou collectives, entre employeurs et salariés. C'est la définition de référence posée dès l'introduction générale du cours."
+    },
+    {
+        id: 2,
+        section: "INTRO",
+        label: "Question 2 / 100",
+        text: "D'après la chambre sociale de la Cour de cassation (arrêt du 22 juillet 1954), à quelle condition précise un contrat de travail existe-t-il ?",
+        options: {
+            A: "Dès qu'une personne accomplit une tâche rémunérée pour autrui, sans condition de subordination.",
+            B: "Dès lors qu'un accord verbal est conclu entre deux parties sur les conditions de travail.",
+            C: "Dès qu'une personne s'engage à travailler pour le compte et sous la direction d'une autre, moyennant rémunération.",
+            D: "Dès qu'un employeur verse un salaire mensuel à une personne exerçant une activité régulière."
+        },
+        correct: "C",
+        explanation: "La chambre sociale a posé le 22 juillet 1954 que le contrat de travail existe dès lors qu'une personne s'engage à travailler pour le compte et sous la direction d'une autre, moyennant rémunération. Le critère essentiel est la subordination : le droit du travail est intrinsèquement le droit de la subordination."
+    },
+    {
+        id: 3,
+        section: "P1",
+        label: "Question 3 / 100",
+        text: "Qu'est-ce que le colonat, institution issue d'un décret impérial de 332, qui constitua l'une des origines du servage ?",
+        options: {
+            A: "Un système d'esclavage total dans lequel l'homme peut être vendu avec la terre qu'il cultive.",
+            B: "Un statut d'homme juridiquement libre, mais attaché perpétuellement et héréditairement à la terre qu'il cultive.",
+            C: "Un régime de semi-liberté propre aux barbares germaniques installés sur les terres romaines.",
+            D: "Un contrat de métayage concédant à un colon la moitié de la récolte en échange de sa main-d'œuvre."
+        },
+        correct: "B",
+        explanation: "Le colonat est une institution issue d'un décret impérial de 332. Le colon est un homme juridiquement libre, mais attaché perpétuellement à la terre qu'il cultive. Il ne peut quitter le domaine, et cette obligation est héréditaire. Le statut de serf naîtra de la fusion entre l'esclavage et ce colonat."
+    },
+    {
+        id: 4,
+        section: "P1",
+        label: "Question 4 / 100",
+        text: "Comment le droit féodal désigne-t-il la terre tenue en pleine propriété, libre de toute charge ou obligation envers un seigneur ?",
+        options: {
+            A: "L'alleu (ou allôd).",
+            B: "La censive.",
+            C: "La tenure perpétuelle.",
+            D: "Le manse ingénuile."
+        },
+        correct: "A",
+        explanation: "L'alleu (ou allôd) est la terre tenue en pleine propriété, libre de toute charge ou obligation envers un seigneur. Il contraste avec les tenures, qui supposent un lien de dépendance à l'égard du seigneur. L'alleu est également la réponse attendue à la question 10 de l'annale 2023-2024."
+    },
+    {
+        id: 5,
+        section: "P1",
+        label: "Question 5 / 100",
+        text: "Qu'est-ce que l'assolement triennal, technique agricole apportée par l'influence germanique à l'époque mérovingienne ?",
+        options: {
+            A: "Un système laissant la moitié des terres en repos chaque année, hérité de l'époque romaine.",
+            B: "Une méthode de division de la récolte entre le seigneur, le tenancier et l'Église.",
+            C: "Un régime de rotation biennale des cultures imposé par Charlemagne dans ses capitulaires.",
+            D: "Une technique divisant les terres en trois parties pour alterner les cultures, ne laissant qu'un tiers du sol en jachère chaque année."
+        },
+        correct: "D",
+        explanation: "L'assolement triennal consiste à diviser les terres en trois parties pour alterner les cultures et ne laisser qu'un tiers du sol au repos (jachère) chaque année, augmentant ainsi la productivité par rapport au système romain qui laissait la moitié des terres au repos (assolement biennal)."
+    },
+    {
+        id: 6,
+        section: "P1",
+        label: "Question 6 / 100",
+        text: "Dans le grand domaine carolingien, parmi les trois types de manses distingués selon le statut de l'occupant, lequel était réservé aux esclaves ?",
+        options: {
+            A: "Le manse ingénuile.",
+            B: "Le manse servile.",
+            C: "Le manse lidile.",
+            D: "Le manse domanial."
+        },
+        correct: "B",
+        explanation: "On distingue trois types de manses : les manses ingénuiles (pour les hommes nés libres, ingénus), les manses lidiles (pour les lides, colons d'origine germanique en état de semi-liberté) et les manses serviles (pour les esclaves). Tous sont soumis à la corvée."
+    },
+    {
+        id: 7,
+        section: "P1",
+        label: "Question 7 / 100",
+        text: "Quelle est la définition exacte de la corvée dans le système domanial médiéval ?",
+        options: {
+            A: "Une redevance annuelle en argent fixe versée par le tenancier au seigneur pour l'usage de sa tenure.",
+            B: "La part de la récolte prélevée par le seigneur sur la production du tenancier, souvent 1/6e ou 1/7e.",
+            C: "L'obligation pour le tenancier de fournir gratuitement un certain nombre de journées de travail manuel sur les terres de la réserve du seigneur.",
+            D: "La taxe arbitraire payée au seigneur sans limitation de montant, représentant l'une des marques de la condition servile."
+        },
+        correct: "C",
+        explanation: "La corvée est l'obligation pour le tenancier de fournir gratuitement un certain nombre de journées de travail manuel sur les terres de la réserve du seigneur. À ne pas confondre avec la corvée 'à merci', propre aux serfs, dont la durée n'est pas limitée par la coutume."
+    },
+    {
+        id: 8,
+        section: "P1",
+        label: "Question 8 / 100",
+        text: "Qu'est-ce que le Ban (ou seigneurie banale), apparu à l'époque féodale lors de l'effondrement de l'Empire carolingien ?",
+        options: {
+            A: "Un ensemble de droits fiscaux que le seigneur percevait sur les activités commerciales de son domaine.",
+            B: "Un document écrit par lequel le seigneur accordait au paysan le droit d'exploiter une tenure.",
+            C: "Un pouvoir de commandement, de justice et de punition usurpé par les seigneurs locaux sur un territoire et ses habitants.",
+            D: "Un impôt spécifique pesant sur les serfs lors de leur mariage avec une personne extérieure à la seigneurie."
+        },
+        correct: "C",
+        explanation: "Le Ban (ou Seigneurie banale) est le pouvoir de commandement, de justice et de punition usurpé par les seigneurs locaux, leur permettant d'imposer leur volonté sur un territoire et ses habitants. Il émerge au IXe siècle lors de la désintégration de l'Empire carolingien au profit des principautés locales."
+    },
+    {
+        id: 9,
+        section: "P1",
+        label: "Question 9 / 100",
+        text: "Dans la seigneurie foncière féodale, qu'est-ce que la censive, l'une des principales tenures perpétuelles ?",
+        options: {
+            A: "Une tenure concédée contre le paiement d'une somme d'argent annuelle fixe appelée cens.",
+            B: "Une tenure où le tenancier remet une part de sa récolte représentant souvent 1/6 ou 1/7 de la production.",
+            C: "Une tenure à durée limitée concédée à un fermier contre un loyer fixe.",
+            D: "Une tenure spécifique à la viticulture où le vigneron partage entre 1/4 et 1/2 de sa production."
+        },
+        correct: "A",
+        explanation: "La censive est une terre concédée contre le paiement d'une somme d'argent annuelle fixe : le cens. La redevance en part de récolte se nomme le champart, et la tenure spécifique à la vigne s'appelle le complant (disparu avec le décret-loi du 17 juin 1938)."
+    },
+    {
+        id: 10,
+        section: "P1",
+        label: "Question 10 / 100",
+        text: "Laquelle de ces incapacités majeures frappait spécifiquement les serfs, les distinguant des vilains (hommes libres) ?",
+        options: {
+            A: "L'interdiction de circuler librement dans le royaume sans autorisation royale.",
+            B: "L'obligation de participer aux procédures judiciaires du seigneur en qualité de témoin.",
+            C: "L'interdiction formelle d'exercer un métier ou un commerce dans les villes franches.",
+            D: "La taille, taxe arbitraire payée au seigneur dont le montant n'était pas fixé par la coutume."
+        },
+        correct: "D",
+        explanation: "Les serfs subissaient quatre incapacités majeures : la taille (taxe arbitraire), la corvée à merci (travail obligatoire sans limite fixée par la coutume), le fort-mariage (taxe pour mariage hors seigneurie) et la mainmorte (saisie des biens à leur décès). Les vilains, hommes libres, avaient des obligations fixées par contrat ou coutume."
+    },
+    {
+        id: 11,
+        section: "P1",
+        label: "Question 11 / 100",
+        text: "Qu'est-ce que la mainmorte, l'une des quatre incapacités majeures de la condition servile ?",
+        options: {
+            A: "L'interdiction faite au serf de transmettre ses outils de travail à ses héritiers sans autorisation seigneuriale.",
+            B: "Le droit du seigneur de saisir les biens du serf à son décès, privant ainsi ses enfants d'héritage.",
+            C: "La taxe due par le serf pour épouser une personne appartenant à une autre seigneurie.",
+            D: "L'obligation pour le serf de travailler sans limitation de durée sur les terres de la réserve seigneuriale."
+        },
+        correct: "B",
+        explanation: "La mainmorte est le droit du seigneur de saisir les biens du serf à son décès, privant ses enfants d'héritage. C'est l'une des quatre incapacités majeures avec la taille, la corvée à merci et le fort-mariage. La mainmorte fut abolie par le décret du 11 août 1789."
+    },
+    {
+        id: 12,
+        section: "P1",
+        label: "Question 12 / 100",
+        text: "Quel est le nom précis de la taxe due par le serf pour épouser une personne extérieure à la seigneurie ?",
+        options: {
+            A: "Le fort-mariage.",
+            B: "La taille.",
+            C: "La mainmorte.",
+            D: "La corvée à merci."
+        },
+        correct: "A",
+        explanation: "Le fort-mariage est la taxe due pour épouser une personne hors de la seigneurie. Il constitue l'une des quatre grandes incapacités de la condition servile, aux côtés de la taille, de la corvée à merci et de la mainmorte."
+    },
+    {
+        id: 13,
+        section: "P1",
+        label: "Question 13 / 100",
+        text: "Qui fit rédiger le Livre des métiers en 1258, mettant par écrit les statuts coutumiers des corporations parisiennes ?",
+        options: {
+            A: "Colbert, contrôleur général des finances sous Louis XIV.",
+            B: "Henri III, dans le cadre de sa politique de systématisation des métiers jurés.",
+            C: "Étienne Boileau, prévôt de Paris sous le règne de Saint Louis.",
+            D: "Turgot, contrôleur général des finances sous Louis XVI."
+        },
+        correct: "C",
+        explanation: "En 1258, le prévôt Étienne Boileau fit rédiger le Livre des métiers, mettant par écrit les statuts coutumiers des communautés de métiers parisiennes. Ce texte constitue la première codification des usages corporatifs à Paris."
+    },
+    {
+        id: 14,
+        section: "P1",
+        label: "Question 14 / 100",
+        text: "Quelle organisation parisienne issue des Ghildes, connue sous son nom latin, obtint le monopole du transport sur la Seine et dont le bureau finit par constituer la municipalité parisienne ?",
+        options: {
+            A: "Les bouchers du Châtelet, première corporation d'origine religieuse.",
+            B: "Les Six-Corps des marchands, représentant l'élite corporative parisienne.",
+            C: "La Fédération nationale des syndicats, fondée lors du congrès de Lyon en 1886.",
+            D: "Les Mercatores aquae (marchands de l'eau)."
+        },
+        correct: "D",
+        explanation: "À Paris, les Mercatores aquae (marchands de l'eau) obtinrent le monopole du transport sur la Seine. Leur bureau finit par constituer la municipalité parisienne. C'est l'une des deux racines de l'association marchande avec les Ghildes et Hanses."
+    },
+    {
+        id: 15,
+        section: "P1",
+        label: "Question 15 / 100",
+        text: "Parmi les trois formes de métiers dans l'Ancienne France, laquelle est organisée autour d'un serment, détient un monopole et présente une structure hiérarchisée en maîtres, compagnons et apprentis ?",
+        options: {
+            A: "Le métier libre, caractérisé par la libre concurrence mais soumis aux règlements de police.",
+            B: "Le métier réglé, soumis à la réglementation d'une municipalité sans nécessairement constituer un monopole.",
+            C: "Le métier corporatif, issu de la réforme de Colbert en 1673 et s'appliquant à tous les artisans.",
+            D: "Le métier juré (ou jurande), organisé autour d'un serment et détenant un monopole."
+        },
+        correct: "D",
+        explanation: "Le métier juré (ou jurande) est organisé autour d'un serment, détient un monopole, et sa structure est strictement hiérarchisée : Maîtres (chefs d'atelier), Compagnons (salariés qualifiés) et Apprentis. Le métier réglé est soumis à la réglementation d'une municipalité (fréquent dans le Midi ou à Lyon). Le métier libre est caractérisé par la libre concurrence."
+    },
+    {
+        id: 16,
+        section: "P1",
+        label: "Question 16 / 100",
+        text: "À partir de quelle date la réalisation d'un chef-d'œuvre démontrant le savoir-faire du candidat devint-elle obligatoire pour accéder à la maîtrise dans le métier juré ?",
+        options: {
+            A: "Depuis 1465, le chef-d'œuvre devenant obligatoire comme condition d'accès à la maîtrise.",
+            B: "Depuis 1258, avec la rédaction du Livre des métiers par Étienne Boileau.",
+            C: "Depuis 1539, lors de l'ordonnance de Villers-Cotterêts interdisant les coalitions.",
+            D: "Depuis 1673, avec les lettres patentes de Colbert généralisant les métiers jurés."
+        },
+        correct: "A",
+        explanation: "Le chef-d'œuvre est obligatoire dès 1465 pour accéder à la maîtrise. Avec le temps, la maîtrise devient héréditaire et onéreuse, privilégiant les fils de maîtres. L'élite de la maîtrise est représentée par les Six-Corps des marchands de Paris."
+    },
+    {
+        id: 17,
+        section: "P1",
+        label: "Question 17 / 100",
+        text: "Quelle ordonnance royale de 1539 interdit formellement les coalitions et les confréries de compagnons et maîtres pour garantir la continuité du travail ?",
+        options: {
+            A: "L'édit de Turgot de février 1776.",
+            B: "L'ordonnance de Villers-Cotterêts.",
+            C: "L'édit d'Henri III de 1581 sur la généralisation des métiers jurés.",
+            D: "Les lettres patentes de Colbert de 1673 sur l'organisation des artisans."
+        },
+        correct: "B",
+        explanation: "L'ordonnance de Villers-Cotterêts de 1539 interdit les coalitions (grèves) et les confréries de compagnons et maîtres pour protéger le public. C'est dans le cadre du métier juré, groupement hiérarchique et non volontaire, que cette interdiction s'impose."
+    },
+    {
+        id: 18,
+        section: "P1",
+        label: "Question 18 / 100",
+        text: "Quelle fut la conséquence immédiate de l'opposition du Parlement de Paris à l'édit de Turgot de février 1776, qui supprimait les corporations ?",
+        options: {
+            A: "L'édit fut immédiatement ratifié après révision et mit fin définitivement aux corporations avant la Révolution.",
+            B: "L'édit fut maintenu mais son application fut progressivement limitée jusqu'à la Révolution de 1789.",
+            C: "L'opposition du Parlement de Paris conduisit à la chute de Turgot en mars 1776 et à l'annulation de l'édit.",
+            D: "L'édit servit de modèle direct au Décret d'Allarde de 1791 qui le reproduisit intégralement."
+        },
+        correct: "C",
+        explanation: "Turgot, contrôleur général des finances sous Louis XVI, tenta de supprimer les corporations en affirmant que le droit de travailler est une propriété sacrée. Mais l'opposition du Parlement de Paris conduisit à sa chute en mars 1776 et à l'annulation de l'édit."
+    },
+    {
+        id: 19,
+        section: "P2",
+        label: "Question 19 / 100",
+        text: "Quel fut l'apport fondamental du Décret d'Allarde (2 et 17 mars 1791) dans l'organisation économique française ?",
+        options: {
+            A: "Il créa le premier Code du travail en compilant l'ensemble des règlements corporatifs existants.",
+            B: "Il interdit définitivement les coalitions ouvrières en instaurant le principe de l'isolement du travailleur face au patron.",
+            C: "Il institua le livret ouvrier obligatoire comme moyen de contrôle de la mobilité des travailleurs.",
+            D: "Il supprima définitivement les jurandes et maîtrises, établissant la liberté d'exercer tout métier contre paiement d'une patente."
+        },
+        correct: "D",
+        explanation: "Le Décret d'Allarde (2 et 17 mars 1791) supprime définitivement les jurandes et les maîtrises. Il établit que chaque individu est libre d'exercer le négoce ou le métier de son choix, à condition d'acquitter un impôt : la patente. C'est le triomphe de la loi de l'offre et de la demande."
+    },
+    {
+        id: 20,
+        section: "P2",
+        label: "Question 20 / 100",
+        text: "Quel est le principe philosophique central de la Loi Le Chapelier (14 et 17 juin 1791) concernant les relations entre individus et État ?",
+        options: {
+            A: "Elle interdit tout intermédiaire entre l'individu et l'État, prohibant coalitions, grèves et associations professionnelles.",
+            B: "Elle rétablit le principe de la protection corporative pour les travailleurs face aux employeurs.",
+            C: "Elle instaura un salaire minimum légal pour mettre fin à l'exploitation des ouvriers dans les manufactures.",
+            D: "Elle autorisa les syndicats à condition qu'ils n'interviennent pas dans les conflits individuels entre patrons et ouvriers."
+        },
+        correct: "A",
+        explanation: "La Loi Le Chapelier affirme au nom de l'égalité qu'il ne doit plus y avoir d'intérêts intermédiaires entre l'individu et l'État. Elle interdit les coalitions, les grèves et les associations professionnelles. C'est la 'liberté obligatoire' : le contrat doit être une convention purement individuelle entre patron et ouvrier."
+    },
+    {
+        id: 21,
+        section: "P2",
+        label: "Question 21 / 100",
+        text: "Quelles furent les limitations précises de la loi du 22 mars 1841 sur le travail des enfants qui rendirent son application inefficace ?",
+        options: {
+            A: "Elle interdit le travail des enfants de moins de 10 ans dans toutes les entreprises, avec une journée maximale de 10 heures pour les 10-16 ans.",
+            B: "Elle fixa l'âge minimum d'embauche à 12 ans et créa un corps d'inspecteurs du travail salariés et indépendants.",
+            C: "Elle interdit le travail des enfants de moins de 8 ans et ne s'appliquait qu'aux entreprises de plus de 20 ouvriers, avec des inspecteurs bénévoles issus du milieu industriel.",
+            D: "Elle interdisait tout travail de nuit pour les moins de 18 ans et imposait une journée de 8 heures pour tous les mineurs."
+        },
+        correct: "C",
+        explanation: "La loi du 22 mars 1841 interdit le travail des enfants de moins de 8 ans, limite à 8h pour les 8-12 ans et à 12h pour les 12-16 ans. Mais elle ne visait que les entreprises de plus de 20 ouvriers et sans vapeur. Son inefficacité tient aux inspecteurs bénévoles issus du milieu industriel, sans pouvoir contraignant réel."
+    },
+    {
+        id: 22,
+        section: "P2",
+        label: "Question 22 / 100",
+        text: "Quel fut le rôle précis du livret ouvrier, rétabli par la loi du 12 avril 1803, comme instrument de contrôle social ?",
+        options: {
+            A: "Il constituait un passeport permettant à l'ouvrier de se déplacer librement d'une ville à l'autre.",
+            B: "Il servait à contrôler la mobilité et les dettes de l'ouvrier : sans livret visé, l'ouvrier risquait l'arrestation pour vagabondage.",
+            C: "Il garantissait à l'ouvrier un contrat de travail écrit opposable à l'employeur en cas de litige sur les salaires.",
+            D: "Il attestait des qualifications professionnelles de l'ouvrier et lui permettait d'accéder aux métiers réglementés."
+        },
+        correct: "B",
+        explanation: "Le livret ouvrier est un carnet d'état civil et professionnel visé par la police ou la mairie. L'employeur le conserve durant l'embauche. Sans livret visé (congé d'acquis), l'ouvrier ne peut être réembauché et risque d'être arrêté pour vagabondage. Le patron pouvait retenir le livret si l'ouvrier avait des dettes non remboursées."
+    },
+    {
+        id: 23,
+        section: "P2",
+        label: "Question 23 / 100",
+        text: "Que disposait l'article 1781 du Code civil, créant une inégalité juridique profonde entre patron et ouvrier, abrogé seulement en 1868 ?",
+        options: {
+            A: "Il imposait que tout contrat de travail soit rédigé par écrit et signé devant un notaire pour être valide.",
+            B: "Il établissait que l'ouvrier pouvait toujours contester le montant de son salaire devant le conseil de Prud'hommes.",
+            C: "Il reconnaissait la parole de l'ouvrier comme équivalente à celle du patron en cas de litige sur un contrat verbal.",
+            D: "Il disposait que 'le maître est cru sur son affirmation' pour le montant et le paiement des salaires de l'année échue."
+        },
+        correct: "D",
+        explanation: "L'article 1781 du Code civil disposait que 'le maître est cru sur son affirmation' pour le montant et le paiement des salaires de l'année échue. En cas de litige sur un contrat souvent verbal, la parole du patron l'emportait juridiquement sur celle du salarié. Ce privilège patronal ne fut abrogé qu'en 1868."
+    },
+    {
+        id: 24,
+        section: "P2",
+        label: "Question 24 / 100",
+        text: "Pourquoi la loi du 10 avril 1834 fut-elle particulièrement répressive pour le mouvement ouvrier naissant qui tentait de s'organiser ?",
+        options: {
+            A: "Elle interdit toute association non autorisée, même découpée en sections de moins de 20 personnes, colmatant ainsi la brèche utilisée par les ouvriers.",
+            B: "Elle réintroduisit les peines corporelles pour les ouvriers participant à des mouvements de grève.",
+            C: "Elle obligea tous les ouvriers à s'inscrire auprès d'une chambre corporative sous peine d'emprisonnement.",
+            D: "Elle interdit spécifiquement les associations ouvrières tout en laissant subsister les associations patronales."
+        },
+        correct: "A",
+        explanation: "La loi du 10 avril 1834 interdit toute association non autorisée, même découpée en sections de moins de 20 personnes. Elle visait à empêcher les ouvriers de contourner l'interdiction des associations en se fractionnant en petits groupes. Sa conséquence fut la disparition des associations au profit d'une 'élite ouvrière' qui prit le relais."
+    },
+    {
+        id: 25,
+        section: "P2",
+        label: "Question 25 / 100",
+        text: "Qui fonda en 1840 le journal L'Atelier, organe de presse de l'élite ouvrière en lutte contre les conditions du travail industriel ?",
+        options: {
+            A: "Philippe Buchez et Anthime Corbon.",
+            B: "Agricol Perdiguier et Flora Tristan.",
+            C: "Henri Tolain et Jules Guesde.",
+            D: "Louis Blanc et Albert l'ouvrier."
+        },
+        correct: "A",
+        explanation: "Le journal L'Atelier, organe de presse de l'élite ouvrière, fut fondé en 1840 par Philippe Buchez et Anthime Corbon. Il disparut avec la loi de 1850 sur la presse. Cette question figure explicitement dans l'annale 2023-2024 (question 3 des questions courtes)."
+    },
+    {
+        id: 26,
+        section: "P2",
+        label: "Question 26 / 100",
+        text: "Quelle fut la principale réalisation de la Commission du gouvernement pour les travailleurs (Commission du Luxembourg), présidée par Louis Blanc à partir du 28 février 1848 ?",
+        options: {
+            A: "Elle vota l'instauration du suffrage universel masculin et la création des ateliers nationaux.",
+            B: "Elle élabora la première constitution sociale française inscrivant le droit au travail.",
+            C: "Elle obtint l'abolition du marchandage et la réduction de la journée de travail de 12h à 10h à Paris (11h en province).",
+            D: "Elle créa les premières chambres syndicales légalement reconnues par le gouvernement provisoire."
+        },
+        correct: "C",
+        explanation: "Le 2 mars 1848, la Commission du Luxembourg obtient l'abolition du marchandage et la réduction de la journée de travail (passant de 12h à 10h à Paris et 11h en province). Toutefois, ces avancées furent éphémères : dès le 9 septembre 1848, un décret rétablit la journée de 12 heures."
+    },
+    {
+        id: 27,
+        section: "P2",
+        label: "Question 27 / 100",
+        text: "Pour quelle raison principale les Ateliers nationaux, créés le 6 mars 1848 pour résorber le chômage massif à Paris, furent-ils supprimés brutalement ?",
+        options: {
+            A: "Parce qu'ils accueillaient des ouvriers étrangers au détriment des travailleurs français.",
+            B: "Parce qu'ils étaient perçus par les conservateurs comme des foyers d'agitation politique coûteux menaçant l'ordre social.",
+            C: "Parce qu'ils imposaient des salaires trop élevés déstabilisant l'ensemble du marché du travail parisien.",
+            D: "Parce qu'ils organisaient des formations syndicales illégales sous couverture de travaux de voirie."
+        },
+        correct: "B",
+        explanation: "Les ateliers nationaux organisaient de grands travaux de voirie pour résorber le chômage (plus de 100 000 personnes à Paris). Ils étaient perçus par les conservateurs comme des foyers d'agitation coûteux. Leur suppression brutale provoqua les journées insurrectionnelles de juin 1848 (4 000 morts, 12 000 arrestations)."
+    },
+    {
+        id: 28,
+        section: "P2",
+        label: "Question 28 / 100",
+        text: "Quel sort la Constitution du 4 novembre 1848 réserva-t-elle au 'droit au travail' proclamé par le gouvernement provisoire en février 1848 ?",
+        options: {
+            A: "Elle l'inscrivit solennellement dans son préambule comme un droit fondamental garanti à tous les citoyens.",
+            B: "Elle le transforma en droit collectif exercé uniquement par les syndicats reconnus légalement.",
+            C: "Elle en confia la mise en œuvre aux municipalités et aux conseils de Prud'hommes.",
+            D: "Elle l'évinça de la Constitution en le remplaçant par une simple 'assistance fraternelle'."
+        },
+        correct: "D",
+        explanation: "La Constitution du 4 novembre 1848 entérine l'échec du 'droit au travail' en le remplaçant par une simple 'assistance fraternelle'. C'est la reconnaissance de l'impossibilité politique d'aller plus loin après la répression des journées de juin 1848."
+    },
+    {
+        id: 29,
+        section: "P2",
+        label: "Question 29 / 100",
+        text: "Quel fut l'apport décisif de la loi Ollivier du 25 mai 1864 pour la classe ouvrière sous le Second Empire libéral ?",
+        options: {
+            A: "Elle autorisa la création de syndicats professionnels libres et pleinement reconnus par l'État.",
+            B: "Elle supprima le délit de coalition, reconnaissant implicitement le droit de grève, à condition de ne pas porter atteinte à la liberté du travail.",
+            C: "Elle instaura la journée de travail de 10 heures pour tous les ouvriers de l'industrie.",
+            D: "Elle abrogea définitivement le livret ouvrier et supprima l'article 1781 du Code civil."
+        },
+        correct: "B",
+        explanation: "La grande loi du 25 mai 1864 supprime le délit de coalition, reconnaissant implicitement le droit de grève (à condition qu'il n'y ait pas de violences ou d'atteinte à la liberté du travail). La grève devient licite ; seules les violences et pressions restent réprimées. C'est la loi Ollivier (du nom du député républicain Émile Ollivier)."
+    },
+    {
+        id: 30,
+        section: "P2",
+        label: "Question 30 / 100",
+        text: "Que réclamait le Manifeste des Soixante, signé en 1864 par Henri Tolain et 59 autres ouvriers lors de l'exposition universelle ?",
+        options: {
+            A: "L'application immédiate du droit de grève et la légalisation des syndicats professionnels.",
+            B: "La création d'une Internationale ouvrière rassemblant les travailleurs de tous les pays européens.",
+            C: "La nécessité d'une représentation politique propre et autonome de la classe ouvrière, distincte de la bourgeoisie.",
+            D: "La réduction de la journée de travail à 10 heures et l'abolition immédiate du livret ouvrier."
+        },
+        correct: "C",
+        explanation: "Le Manifeste des 60 (1864) fut signé par 60 ouvriers (Henri Tolain en tête) et réclamait la nécessité d'une représentation politique propre à la classe ouvrière, indépendante de la bourgeoisie. Ce texte figure parmi les sujets de l'annale 2023-2024 (sujet n°5)."
+    },
+    {
+        id: 31,
+        section: "P3",
+        label: "Question 31 / 100",
+        text: "Quel fut le contenu essentiel de la loi Waldeck-Rousseau du 21 mars 1884 relative à la liberté des syndicats professionnels ?",
+        options: {
+            A: "Elle rétablit les corporations de l'Ancien Régime sous la forme de syndicats mixtes à adhésion obligatoire.",
+            B: "Elle autorisa les syndicats uniquement à condition que leur action se limite aux questions de salaires.",
+            C: "Elle étendit le droit de grève reconnu en 1864 aux fonctionnaires de l'État et aux services publics.",
+            D: "Elle abrogea la loi Le Chapelier et fit du syndicat une association de droit privé purement volontaire."
+        },
+        correct: "D",
+        explanation: "La loi Waldeck-Rousseau du 21 mars 1884 abolit définitivement la loi Le Chapelier et fait du syndicat une association de droit privé purement volontaire. Elle consacre la liberté de constitution des syndicats avec le simple dépôt des statuts et garantit la liberté individuelle absolue de s'y inscrire ou s'en retirer."
+    },
+    {
+        id: 32,
+        section: "P3",
+        label: "Question 32 / 100",
+        text: "La Confédération générale du travail (CGT) est née lors du congrès de quelle ville en 1895, scellant l'union de la FBT et de la Fédération nationale des syndicats ?",
+        options: {
+            A: "Limoges, lors du congrès de 1895 scellant l'union des deux fédérations syndicales.",
+            B: "Paris, lors du congrès fondateur réuni à la Bourse du travail de la capitale.",
+            C: "Lyon, lors du premier congrès national syndical tenu en 1886.",
+            D: "Toulouse, lors du congrès de réunification des forces syndicales fragmentées."
+        },
+        correct: "A",
+        explanation: "Le congrès de Limoges en 1895 scelle l'union de la Fédération des bourses du travail (FBT) et de la Fédération nationale des syndicats (FNS), donnant naissance à la CGT. La CGT absorbera définitivement la FBT lors du congrès de Montpellier en 1902."
+    },
+    {
+        id: 33,
+        section: "P3",
+        label: "Question 33 / 100",
+        text: "Quel principe fondamental la Charte d'Amiens, adoptée par la CGT en octobre 1906, consacra-t-elle comme doctrine du mouvement syndical ?",
+        options: {
+            A: "La primauté de l'action politique socialiste sur l'action syndicale directe dans les usines.",
+            B: "L'obligation pour les syndicats d'adhérer à la SFIO pour défendre efficacement les intérêts des travailleurs.",
+            C: "L'autonomie syndicale, c'est-à-dire la séparation stricte et définitive entre le mouvement syndical et les partis politiques ou l'État.",
+            D: "La création d'un fonds de grève permanent pour financer les mouvements revendicatifs des ouvriers."
+        },
+        correct: "C",
+        explanation: "La Charte d'Amiens (octobre 1906) affirme le principe de l'autonomie syndicale : la séparation stricte et définitive entre le mouvement syndical, qui se suffit à lui-même pour lutter directement contre le patronat, et les partis politiques ou l'État. C'est une réponse à la tension entre syndicalistes purs et partisans de l'action politique."
+    },
+    {
+        id: 34,
+        section: "P3",
+        label: "Question 34 / 100",
+        text: "Quelle innovation fondamentale la loi du 9 avril 1898 sur les accidents du travail apporta-t-elle par rapport au régime antérieur du Code civil ?",
+        options: {
+            A: "Elle créa une assurance obligatoire financée par l'État pour indemniser intégralement toutes les victimes d'accidents.",
+            B: "Elle institua la notion de risque professionnel, rendant automatique la responsabilité de l'employeur sans que l'ouvrier n'ait à prouver de faute.",
+            C: "Elle étendit aux maladies professionnelles la même protection légale qu'aux accidents survenus sur le lieu de travail.",
+            D: "Elle créa les premiers tribunaux spécialisés dans le contentieux des accidents du travail."
+        },
+        correct: "B",
+        explanation: "La loi du 9 avril 1898 consacre la notion de risque professionnel : le fonctionnement même de l'entreprise génère des risques inévitables dont la réparation pèse automatiquement sur l'employeur, sans que l'ouvrier n'ait à prouver de faute. L'indemnisation restait néanmoins forfaitaire et excluait les maladies professionnelles (intégrées par la loi du 25 octobre 1919)."
+    },
+    {
+        id: 35,
+        section: "P3",
+        label: "Question 35 / 100",
+        text: "Quelle fut la nature précise du premier Code du travail issu de la loi du 28 décembre 1910, promulguée progressivement jusqu'en 1927 ?",
+        options: {
+            A: "Une simple compilation et mise en ordre des lois ouvrières éparses existantes, sans modifier leur contenu.",
+            B: "Un texte innovant qui réforma en profondeur le droit du contrat de travail en le séparant définitivement du droit civil.",
+            C: "Un code qui instaura pour la première fois le principe d'une protection minimale des travailleurs contre les licenciements abusifs.",
+            D: "Un texte créant les premières assurances sociales obligatoires pour les ouvriers des manufactures."
+        },
+        correct: "A",
+        explanation: "La loi du 28 décembre 1910 crée le premier Code du travail. Cette première mouture était avant tout une simple compilation juridique : son livre 1er regroupait 106 articles consacrés au contrat de travail sans modifier le fond des textes préexistants. La codification avait été poussée notamment par le ministre Alexandre Millerand à partir de 1901."
+    },
+    {
+        id: 36,
+        section: "P3",
+        label: "Question 36 / 100",
+        text: "Quelles furent les deux innovations juridiques fondamentales de la loi du 25 mars 1919 sur les conventions collectives ?",
+        options: {
+            A: "Elle imposa la signature obligatoire d'une convention collective dans toutes les branches professionnelles et en rendit le contenu impératif.",
+            B: "Elle créa un mécanisme d'extension des conventions collectives à toute une branche par décision gouvernementale.",
+            C: "Elle accorda aux syndicats le monopole de la représentation dans les négociations avec les employeurs.",
+            D: "Les clauses de la convention s'appliquent automatiquement à tous les contrats individuels des membres et les groupements signataires peuvent agir en justice pour leurs adhérents sans mandat exprès."
+        },
+        correct: "D",
+        explanation: "La loi du 25 mars 1919 apporte deux innovations : les clauses de la CC s'appliquent automatiquement à tous les contrats individuels conclus par les membres soumis à la CC ; les groupements signataires peuvent agir en justice pour défendre leurs adhérents sans avoir à justifier d'un mandat exprès."
+    },
+    {
+        id: 37,
+        section: "P3",
+        label: "Question 37 / 100",
+        text: "Quel principe la loi du 23 avril 1919 instaura-t-elle, dans le prolongement immédiat de l'après-Première Guerre mondiale ?",
+        options: {
+            A: "L'institution des conventions collectives comme source principale et obligatoire du droit du travail.",
+            B: "La création de la CFTC et de la CGPF comme organisations représentatives des travailleurs et du patronat.",
+            C: "Le principe de la limitation de la journée de travail à 8 heures (soit 48 heures par semaine) pour l'ensemble des secteurs professionnels.",
+            D: "La semaine de 40 heures pour tous les secteurs professionnels à l'exception des mines et de l'agriculture."
+        },
+        correct: "C",
+        explanation: "La loi du 23 avril 1919 institue le principe de la limitation de la journée de travail à 8 heures (soit la semaine de 48 heures) pour l'ensemble des secteurs professionnels, à l'exception des mines. Son application fut renvoyée à des règlements pris après accord entre partenaires sociaux, stimulant la signature de nombreuses conventions collectives."
+    },
+    {
+        id: 38,
+        section: "P3",
+        label: "Question 38 / 100",
+        text: "Quelle organisation syndicale concurrente de la CGT fut créée en 1921 par les minoritaires qui quittèrent la confédération après l'interdiction du noyautage communiste ?",
+        options: {
+            A: "La CFTC (Confédération française des travailleurs chrétiens), fondée le 2 novembre 1919.",
+            B: "La CGTU (Confédération générale du travail unitaire).",
+            C: "La CGC (Confédération générale des cadres), créée pour représenter les catégories intermédiaires.",
+            D: "La CFDT (Confédération française démocratique du travail), issue de la déchristianisation de la CFTC."
+        },
+        correct: "B",
+        explanation: "Après l'interdiction par la direction de la CGT de la tactique du noyautage pratiquée par les Comités Syndicalistes Révolutionnaires (CSR), les minoritaires quittèrent la confédération historique pour créer la CGTU (Confédération générale du travail unitaire). La CGT et la CGTU se réunifieront en mars 1936 lors du congrès de Toulouse."
+    },
+    {
+        id: 39,
+        section: "P3",
+        label: "Question 39 / 100",
+        text: "Qu'est-ce que les accords de Matignon, signés les 7 et 8 juin 1936 en pleine vague de grèves avec occupations d'usines ?",
+        options: {
+            A: "Un traité international entre la France et ses voisins sur l'harmonisation de la durée du travail.",
+            B: "La loi qui institua pour la première fois les délégués du personnel élus dans les entreprises.",
+            C: "Un programme de nationalisation des grandes industries sidérurgiques et ferroviaires lancé par le gouvernement Blum.",
+            D: "Des accords historiques entre patronat et syndicats concédant des hausses de salaires, la liberté syndicale et l'élection de délégués ouvriers."
+        },
+        correct: "D",
+        explanation: "Les accords de Matignon sont des accords historiques signés les 7 et 8 juin 1936 entre le patronat (CGPF) et les syndicats (CGT), concédant des hausses de salaires, la reconnaissance de la liberté syndicale et l'élection de délégués ouvriers. Ils constituent le point de départ de l'œuvre législative du Front Populaire. Ce sujet figure dans les annales 2023-2024 (sujet n°1)."
+    },
+    {
+        id: 40,
+        section: "P3",
+        label: "Question 40 / 100",
+        text: "Quel droit la loi du 20 juin 1936 institua-t-elle pour la première fois comme un droit d'ordre public pour tous les travailleurs justifiant d'un an de service continu ?",
+        options: {
+            A: "Le droit à 15 jours de congés payés par an.",
+            B: "Le droit aux allocations chômage en cas de licenciement économique.",
+            C: "Le droit à une journée de travail de 8 heures maximum dans tous les secteurs.",
+            D: "Le droit à la représentation syndicale à l'intérieur même des locaux de l'entreprise."
+        },
+        correct: "A",
+        explanation: "La loi du 20 juin 1936 institue pour la première fois le droit d'ordre public à 15 jours de congés payés par an pour tout travailleur justifiant d'un an de service continu. Cette mesure représente le 'droit aux loisirs' acquis par le Front Populaire."
+    },
+    {
+        id: 41,
+        section: "P3",
+        label: "Question 41 / 100",
+        text: "Quelle fut la durée hebdomadaire maximale du travail instaurée par la loi du 21 juin 1936, sans diminution du niveau de vie des salariés ?",
+        options: {
+            A: "44 heures par semaine.",
+            B: "40 heures par semaine.",
+            C: "48 heures par semaine.",
+            D: "36 heures par semaine."
+        },
+        correct: "B",
+        explanation: "La loi du 21 juin 1936 réduit la durée maximale du travail hebdomadaire à 40 heures, et ce sans aucune diminution du niveau de vie des salariés. Ce sujet figure explicitement dans l'annale 2024-2025 (sujet n°5 sur l'œuvre du Front populaire)."
+    },
+    {
+        id: 42,
+        section: "P3",
+        label: "Question 42 / 100",
+        text: "Quel fut le principal instrument juridique par lequel le régime de Vichy chercha à supprimer le syndicalisme libre et imposer une organisation corporative du travail ?",
+        options: {
+            A: "L'ordonnance du 16 août 1940 interdisant toutes les réunions syndicales sur les lieux de travail.",
+            B: "La loi du 22 mars 1942 instaurant la médecine du travail obligatoire dans toutes les entreprises.",
+            C: "La Charte du travail du 4 octobre 1941, divisant l'économie en 25 familles professionnelles et créant des comités sociaux.",
+            D: "Le décret-loi du 12 novembre 1938 supprimant définitivement les délégués du personnel élus."
+        },
+        correct: "C",
+        explanation: "La Charte du travail du 4 octobre 1941 divise l'économie française en 25 familles professionnelles et instaure des 'Comités Sociaux' mixtes locaux, régionaux et nationaux. Elle interdit la grève et supprime les syndicats libres au profit d'un syndicat unique à adhésion obligatoire. Dans les faits, ces organismes n'eurent qu'une existence nominale."
+    },
+    {
+        id: 43,
+        section: "P3",
+        label: "Question 43 / 100",
+        text: "Quel mécanisme de garantie du pouvoir d'achat institua la loi du 11 février 1950, et selon quel mode de calcul spécifique était-il indexé ?",
+        options: {
+            A: "Le SMIG (Salaire minimum interprofessionnel garanti), salaire plancher indexé sur le coût de la vie.",
+            B: "Le SMIC, indexé à la fois sur la hausse des prix et sur l'évolution des salaires horaires moyens.",
+            C: "Le salaire minimum vital, fixé en fonction des besoins familiaux du travailleur et de ses charges.",
+            D: "Les allocations familiales, complément de salaire versé aux travailleurs ayant des enfants d'âge scolaire à charge."
+        },
+        correct: "A",
+        explanation: "La loi du 11 février 1950 institue le SMIG (Salaire minimum interprofessionnel garanti), défini comme un salaire plancher indexé sur le coût de la vie pour éviter de creuser l'écart avec le salaire moyen. Il sera modernisé par la loi du 2 janvier 1970 qui crée le SMIC, indexé sur les prix et l'évolution des salaires moyens."
+    },
+    {
+        id: 44,
+        section: "P3",
+        label: "Question 44 / 100",
+        text: "Quel texte constitutionnel érigea le droit de grève en liberté publique fondamentale en France, y compris pour les fonctionnaires ?",
+        options: {
+            A: "La Constitution du 4 novembre 1848 qui proclama le droit des travailleurs à l'assistance fraternelle.",
+            B: "La Constitution de la IIIe République de 1875, dans le cadre de la politique des libertés républicaines.",
+            C: "La loi du 25 mai 1864 qui reconnut implicitement le droit de grève en supprimant le délit de coalition.",
+            D: "Le Préambule de la Constitution du 27 octobre 1946, qui proclama le droit de grève comme liberté fondamentale."
+        },
+        correct: "D",
+        explanation: "Le Préambule de la Constitution du 27 octobre 1946 proclame le droit de grève comme liberté publique fondamentale pour tous, y compris les fonctionnaires. La loi du 11 avril 1950 précisera qu'un arrêt de travail ne rompt pas le contrat de travail, sauf en cas de faute lourde."
+    },
+    {
+        id: 45,
+        section: "P3",
+        label: "Question 45 / 100",
+        text: "Quelle avancée majeure pour la santé et la sécurité au travail les lois Auroux de 1982 introduisirent-elles dans les entreprises de plus de 50 salariés ?",
+        options: {
+            A: "La réduction de la durée légale du travail à 35 heures par semaine.",
+            B: "L'instauration d'un droit de grève préventif permettant aux délégués d'agir avant tout conflit.",
+            C: "La création du CHSCT (Comité d'hygiène, de sécurité et des conditions de travail) obligatoire.",
+            D: "La généralisation des conseils de Prud'hommes avec des élections au suffrage universel sur tout le territoire."
+        },
+        correct: "C",
+        explanation: "La loi Auroux du 23 décembre 1982 crée le CHSCT (Comité d'hygiène, de sécurité et des conditions de travail), obligatoire dans les entreprises de plus de 50 salariés. Les lois Auroux de 1982 introduisirent également la semaine de 39 heures et la 5e semaine de congés payés."
+    },
+    {
+        id: 46,
+        section: "P3",
+        label: "Question 46 / 100",
+        text: "En quoi le SMIC, créé par la loi du 2 janvier 1970, se distingue-t-il du SMIG qu'il remplace comme protection du pouvoir d'achat des travailleurs ?",
+        options: {
+            A: "Le SMIC est un salaire horaire fixe non indexé, contrairement au SMIG qui évoluait automatiquement chaque année.",
+            B: "Le SMIC est indexé à la fois sur la hausse des prix et sur l'évolution des salaires horaires moyens, alors que le SMIG n'était indexé que sur le coût de la vie.",
+            C: "Le SMIC s'applique uniquement aux ouvriers de l'industrie, alors que le SMIG concernait tous les salariés sans distinction.",
+            D: "Le SMIC est fixé par négociation collective, alors que le SMIG était déterminé unilatéralement par l'État."
+        },
+        correct: "B",
+        explanation: "La loi du 2 janvier 1970 crée le SMIC (Salaire minimum de croissance), désormais indexé à la fois sur la hausse des prix et sur l'évolution des salaires horaires moyens. Le SMIG créé en 1950 n'était indexé que sur le coût de la vie, ne permettant pas aux bas salaires de bénéficier de la croissance économique."
+    },
+    {
+        id: 47,
+        section: "INTRO",
+        label: "Question 47 / 100",
+        text: "Quelle création institutionnelle en 1928 consolida l'autonomie du droit du travail comme discipline juridique distincte du droit civil ?",
+        options: {
+            A: "La création de la chambre sociale au sein de la Cour de cassation, formation spécialisée dédiée au droit du travail.",
+            B: "La création du ministère du travail par décret du 25 octobre 1906.",
+            C: "La promulgation du Code du travail par la loi du 28 décembre 1910.",
+            D: "La création du Conseil supérieur du travail le 22 janvier 1891."
+        },
+        correct: "A",
+        explanation: "La reconnaissance du droit du travail fut consolidée sur le plan judiciaire par la création de la chambre sociale au sein de la Cour de cassation en 1928, formation spécialisée dédiée à ce nouveau champ juridique. C'est un tournant institutionnel majeur qui accompagne la naissance du droit du travail comme discipline autonome."
+    },
+    {
+        id: 48,
+        section: "P3",
+        label: "Question 48 / 100",
+        text: "À la demande de qui et dans quelle ville fut créé le premier conseil de Prud'hommes par la loi du 18 mars 1806 ?",
+        options: {
+            A: "À la demande des ouvriers lyonnais soucieux d'obtenir une juridiction paritaire indépendante.",
+            B: "À la demande du gouvernement provisoire, à Paris, pour régler les conflits nés de la suppression des corporations.",
+            C: "À la demande des compagnonnages, à Marseille, pour arbitrer les litiges sur les salaires dans le secteur maritime.",
+            D: "À la demande des industriels, à Lyon, pour régler les litiges professionnels selon les usages de la profession."
+        },
+        correct: "D",
+        explanation: "La loi du 18 mars 1806 crée le premier conseil de Prud'hommes à Lyon, à la demande des industriels pour régler les litiges professionnels selon les usages. Cependant, le décret du 11 juin 1809 assura la domination des fabricants sur les chefs d'atelier, excluant totalement les simples ouvriers. La juridiction deviendra paritaire en 1848. Ce sujet est mentionné dans le SUJET_HISTOIRE.pdf."
+    },
+    {
+        id: 49,
+        section: "P3",
+        label: "Question 49 / 100",
+        text: "Quelle fut la principale mesure de la loi du 2 novembre 1892 en matière de durée du travail pour les femmes majeures et les jeunes travailleurs ?",
+        options: {
+            A: "Elle interdit toute forme de travail de nuit pour les femmes, quelle que soit leur situation familiale.",
+            B: "Elle fixa à 13 ans l'âge minimum d'admission au travail pour les filles dans toutes les entreprises.",
+            C: "Elle instaura l'égalité des salaires entre hommes et femmes pour les travaux identiques dans les manufactures.",
+            D: "Elle limita la journée de travail à 11 heures pour les femmes majeures et les filles de plus de 18 ans, et interdit le travail de nuit pour les moins de 18 ans."
+        },
+        correct: "D",
+        explanation: "La loi du 2 novembre 1892 limite la journée de travail à 11 heures pour les femmes majeures et les filles de plus de 18 ans. Elle interdit le travail de nuit pour les garçons de moins de 18 ans et les filles mineures, et fixe l'âge minimum d'embauche à 13 ans. Elle est l'une des premières lois généralisant la réduction du temps de travail. Elle figure dans l'annale 2023-2024 (question 4)."
+    },
+    {
+        id: 50,
+        section: "P3",
+        label: "Question 50 / 100",
+        text: "Qu'institua la loi du 13 juillet 1906, après l'abolition du repos dominical suite à la séparation de l'Église et de l'État en 1905 ?",
+        options: {
+            A: "La journée de travail de 8 heures pour tous les ouvriers des manufactures et de l'industrie.",
+            B: "La liberté syndicale pour les fonctionnaires de l'État et des services publics.",
+            C: "Le repos hebdomadaire obligatoire pour l'ensemble des ouvriers et employés, jugé indispensable à la vie de famille.",
+            D: "Les premières assurances sociales obligatoires couvrant les risques de maladie et d'invalidité."
+        },
+        correct: "C",
+        explanation: "La loi du 13 juillet 1906 consacre le repos hebdomadaire obligatoire pour l'ensemble des ouvriers et employés, jugé indispensable à la vie de famille. Ce repos succède au repos dominical aboli sous la monarchie de Juillet puis rétabli sous l'Empire avant d'être à nouveau supprimé. La loi de 1906 intervient au lendemain de la loi de séparation Église/État de 1905."
+    },
+    {
+        id: 51,
+        section: "P3",
+        label: "Question 51 / 100",
+        text: "Quel système de retraite la loi du 5 avril 1910 instaura-t-elle pour les ouvriers et les paysans, malgré la méfiance du monde ouvrier ?",
+        options: {
+            A: "Un système à contribution tripartite obligatoire (assuré, patron et État) reposant sur le principe de la capitalisation.",
+            B: "Un système d'assistance publique financé uniquement par l'État et les communes pour les plus démunis.",
+            C: "Un régime de capitalisation individuelle alimenté par des cotisations volontaires de l'assuré uniquement.",
+            D: "Un régime de répartition solidaire financé exclusivement par les cotisations patronales."
+        },
+        correct: "A",
+        explanation: "La loi du 5 avril 1910 crée le système des retraites paysannes et ouvrières, qui repose sur le principe de la capitalisation via une contribution tripartite obligatoire versée à la fois par l'assuré, le patron et l'État. Malgré cette avancée, la loi suscita une grande méfiance dans le monde ouvrier et ses obligations furent peu respectées dans les faits."
+    },
+    {
+        id: 52,
+        section: "P3",
+        label: "Question 52 / 100",
+        text: "Que signifie exactement le sigle SFIO, nom du parti socialiste unifié fondé en 1905 ?",
+        options: {
+            A: "Syndicat Français des Industries et des Ouvriers.",
+            B: "Section Française de l'Internationale Ouvrière.",
+            C: "Section Fédérale des Intérêts Ouvriers.",
+            D: "Société Fraternelle des Initiatives Ouvrières."
+        },
+        correct: "B",
+        explanation: "La SFIO (Section Française de l'Internationale Ouvrière) est le parti socialiste unifié qui naquit en 1905 après la fusion des différentes fractions socialistes, sous l'impulsion notamment de Léon Blum. Cette question figure dans l'annale 2024-2025 (question 9 des questions courtes)."
+    },
+    {
+        id: 53,
+        section: "P3",
+        label: "Question 53 / 100",
+        text: "Quelle devise rassembla les partis de gauche (socialistes, communistes, radicaux) au sein du Front Populaire lors de leur programme commun publié le 12 janvier 1936 ?",
+        options: {
+            A: "« Liberté, Égalité, Fraternité ouvrière ».",
+            B: "« Le travail, la famille, la patrie ».",
+            C: "« La justice sociale, la paix internationale, la défense républicaine ».",
+            D: "« Le pain, la paix, la liberté »."
+        },
+        correct: "D",
+        explanation: "La devise du Front Populaire était 'le pain, la paix, la liberté'. Cette vaste alliance entre socialistes, communistes et radicaux, renforcée par la réunification de la CGT en mars 1936, aboutit à la victoire électorale de la gauche le 3 mai 1936, portant le socialiste Léon Blum au pouvoir pour la première fois."
+    },
+    {
+        id: 54,
+        section: "P3",
+        label: "Question 54 / 100",
+        text: "Quelle procédure administrative la loi du 20 juin 1936 permit-elle au ministre du Travail de prononcer concernant les conventions collectives ?",
+        options: {
+            A: "La nullité des conventions collectives contraires aux principes généraux du droit du travail.",
+            B: "La suspension temporaire d'une convention collective en cas de crise économique grave.",
+            C: "L'extension d'une convention collective, rendant ses dispositions obligatoires pour toute une branche professionnelle, y compris les non-signataires.",
+            D: "La révision obligatoire de toute convention collective datant de plus de deux ans par accord paritaire."
+        },
+        correct: "C",
+        explanation: "La loi du 20 juin 1936 permet au ministre du Travail de prononcer l'extension : une procédure administrative rendant les dispositions d'une convention collective obligatoires pour l'ensemble des employeurs et employés d'une même branche professionnelle, y compris ceux qui ne l'ont pas signée. Ce sujet figure dans l'annale 2024-2025 et dans le SUJET_HISTOIRE.pdf."
+    },
+    {
+        id: 55,
+        section: "P1",
+        label: "Question 55 / 100",
+        text: "Qu'étaient les polyptyques, documents essentiels à la connaissance du grand domaine carolingien ?",
+        options: {
+            A: "Des actes royaux par lesquels l'empereur accordait des terres aux vassaux en échange de leur fidélité.",
+            B: "Des inventaires détaillés recensant les domaines des grands propriétaires (Potentes), leurs manses et leurs occupants.",
+            C: "Des traités de paix signés entre grands propriétaires pour délimiter les frontières de leurs domaines.",
+            D: "Des codes de règlements internes régissant l'organisation du travail servile dans les manufactures carolingiennes."
+        },
+        correct: "B",
+        explanation: "Les polyptyques sont des inventaires détaillés dans lesquels les grands propriétaires (Potentes) faisaient recenser leurs domaines. Ils distinguaient les différents types de manses (ingénuiles, lidiles, serviles) selon le statut de l'occupant et constituaient un outil essentiel de gestion du grand domaine."
+    },
+    {
+        id: 56,
+        section: "P1",
+        label: "Question 56 / 100",
+        text: "Comment se nomment les grands propriétaires terriens de l'économie domaniale carolingienne dont les domaines sont recensés dans des polyptyques ?",
+        options: {
+            A: "Les Potentes.",
+            B: "Les milites.",
+            C: "Les censitaires.",
+            D: "Les lidiles."
+        },
+        correct: "A",
+        explanation: "Les grands propriétaires sont appelés les Potentes (les puissants). Leurs domaines sont recensés dans des polyptyques (inventaires détaillés). On y distingue trois types de manses selon le statut de l'occupant : ingénuiles, lidiles et serviles. Tous les occupants sont soumis à la corvée."
+    },
+    {
+        id: 57,
+        section: "P1",
+        label: "Question 57 / 100",
+        text: "Quel était le rôle précis du rouleur dans l'organisation du compagnonnage sous l'Ancien Régime ?",
+        options: {
+            A: "Il était le maître chargé de superviser les chefs-d'œuvre présentés par les candidats à la maîtrise.",
+            B: "Il était l'inspecteur municipal qui vérifiait la qualité des produits fabriqués par les corporations.",
+            C: "Il était l'aubergiste centralisant l'offre de travail et gérant le placement des compagnons en quête d'emploi.",
+            D: "Il était l'officier royal chargé de percevoir les redevances dues par les métiers jurés à la Couronne."
+        },
+        correct: "C",
+        explanation: "Le placement des compagnons était géré par un rouleur, aubergiste centralisant l'offre de travail et organisant le placement des compagnons itinérants. Les compagnons effectuaient souvent leur 'tour de France' pour parfaire leur art en travaillant successivement chez différents maîtres."
+    },
+    {
+        id: 58,
+        section: "P1",
+        label: "Question 58 / 100",
+        text: "Quels étaient les Six-Corps des marchands de Paris, représentant l'élite corporative au sein du métier juré ?",
+        options: {
+            A: "Les boulangers, bouchers, charcutiers, poissonniers, fromagers et rôtisseurs.",
+            B: "Les imprimeurs, libraires, notaires, apothicaires, médecins et chirurgiens.",
+            C: "Les charpentiers, maçons, couvreurs, plombiers, serruriers et vitriers.",
+            D: "Les drapiers, épiciers, merciers, pelletiers, bonnetiers et orfèvres."
+        },
+        correct: "D",
+        explanation: "L'élite du métier juré est représentée par les Six-Corps des marchands de Paris : drapiers, épiciers, merciers, pelletiers, bonnetiers et orfèvres. Ces six corporations constituaient le sommet de la hiérarchie corporative parisienne."
+    },
+    {
+        id: 59,
+        section: "P3",
+        label: "Question 59 / 100",
+        text: "Que permit la loi du 12 mars 1920 aux syndicats professionnels en matière de défense collective des intérêts de leur profession ?",
+        options: {
+            A: "Elle étendit leur capacité civile, leur permettant de défendre l'intérêt collectif de leur profession devant toutes les juridictions.",
+            B: "Elle leur accorda le droit de participer aux élections politiques pour défendre les intérêts des travailleurs.",
+            C: "Elle leur permit de conclure des conventions collectives ayant force obligatoire pour tous les membres de leur branche.",
+            D: "Elle leur accorda le monopole de la représentation des travailleurs dans les négociations avec le patronat."
+        },
+        correct: "A",
+        explanation: "La loi du 12 mars 1920 étend considérablement la capacité civile des syndicats : ils obtiennent la prérogative fondamentale de défendre devant toutes les juridictions non seulement les intérêts individuels de leurs membres, mais surtout l'intérêt collectif de leur profession. Leur patrimoine est libéré : ils peuvent acquérir des biens, créer des œuvres sociales, subventionner des coopératives."
+    },
+    {
+        id: 60,
+        section: "P3",
+        label: "Question 60 / 100",
+        text: "Qu'est-ce que la 'Semaine sanglante' qui marqua la fin de la Commune de Paris et ses conséquences immédiates ?",
+        options: {
+            A: "La semaine de manifestations populaires du 18 au 25 mars 1871 qui déclencha l'insurrection communarde.",
+            B: "La répression féroce du gouvernement versaillais contre la Commune du 21 au 28 mai 1871, causant 4 000 morts et 12 000 arrestations.",
+            C: "La période de répression des syndicats organisée par Adolphe Thiers après la dissolution de l'Assemblée nationale.",
+            D: "La semaine de grèves générales qui précéda la capitulation de Paris devant les armées prussiennes en janvier 1871."
+        },
+        correct: "B",
+        explanation: "La Semaine sanglante (21-28 mai 1871) est la répression féroce de la Commune par le gouvernement versaillais sous Adolphe Thiers, qui causa 4 000 morts et 12 000 arrestations. Cette répression forge durablement la conscience politique de la classe ouvrière et explique l'extrême méfiance du gouvernement envers les organisations ouvrières jusqu'en 1884."
+    },
+    {
+        id: 61,
+        section: "P3",
+        label: "Question 61 / 100",
+        text: "Quels risques les grandes lois du 5 avril 1928 et du 30 avril 1930 sur les assurances sociales couvraient-elles pour les salariés à bas salaires ?",
+        options: {
+            A: "Uniquement les accidents du travail et les maladies professionnelles reconnues comme telles.",
+            B: "Les risques de chômage technique, de fermeture d'entreprise et de faillite patronale.",
+            C: "La maladie, l'invalidité, la vieillesse, le décès, la maternité et le chômage.",
+            D: "La maladie, la vieillesse et le décès, à l'exclusion explicite du chômage et de la maternité."
+        },
+        correct: "C",
+        explanation: "Les lois du 5 avril 1928 et du 30 avril 1930 mettent en place un système obligatoire d'assurances sociales couvrant les risques de maladie, d'invalidité, de vieillesse, de décès, de maternité et de chômage pour les salariés dont la rémunération ne dépasse pas un certain plafond. C'est l'un des jalons essentiels de la protection sociale française."
+    },
+    {
+        id: 62,
+        section: "P3",
+        label: "Question 62 / 100",
+        text: "Quelle transformation fondamentale de la notion de salaire la loi du 11 mars 1932 sur les allocations familiales opéra-t-elle ?",
+        options: {
+            A: "Elle transforma le salaire en revenu universel versé à tous les citoyens indépendamment de leur travail effectif.",
+            B: "Elle intégra les allocations familiales dans le salaire brut, rendant leur versement obligatoire pour tous les employeurs.",
+            C: "Elle supprima les différences de salaire entre hommes et femmes pour les mêmes postes de travail.",
+            D: "Elle fit du salaire non plus la simple contrepartie du travail fourni, mais un salaire minimum vital tenant compte des besoins familiaux du travailleur."
+        },
+        correct: "D",
+        explanation: "La loi du 11 mars 1932 transforme radicalement la notion de rémunération : le salaire n'est plus seulement la stricte contrepartie du travail fourni, mais devient un véritable salaire minimum vital tenant compte des besoins et des charges de la famille du travailleur. Elle généralise à toutes les industries le système des allocations familiales par affiliation obligatoire à des caisses de compensation."
+    },
+    {
+        id: 63,
+        section: "P3",
+        label: "Question 63 / 100",
+        text: "Quelle fut l'innovation majeure de la loi du 19 mai 1874 sur le travail des enfants par rapport à la loi de 1841 qu'elle améliorait ?",
+        options: {
+            A: "Elle fixa pour la première fois l'âge minimum d'entrée au travail à 10 ans pour les garçons et les filles.",
+            B: "Elle fixa l'âge d'entrée au travail à 12 ans et créa un corps professionnel d'inspecteurs du travail.",
+            C: "Elle étendit la protection aux entreprises de moins de 20 ouvriers, comblant la lacune laissée par la loi de 1841.",
+            D: "Elle interdit définitivement le travail de nuit pour tous les mineurs de moins de 18 ans dans l'industrie."
+        },
+        correct: "B",
+        explanation: "La loi du 19 mai 1874 améliore l'ancienne loi de 1841 en fixant l'âge d'entrée au travail à 12 ans et surtout en créant les inspections du travail, corps de fonctionnaires chargés de contrôler l'application de ces règles. C'est l'innovation institutionnelle majeure : la loi de 1841 n'avait que des inspecteurs bénévoles sans pouvoir réel."
+    },
+    {
+        id: 64,
+        section: "P3",
+        label: "Question 64 / 100",
+        text: "Quel principe fondamental la loi du 12 juin 1893 sur l'hygiène et la sécurité imposa-t-elle pour la première fois aux manufactures ?",
+        options: {
+            A: "Elle imposa pour la première fois aux manufactures des exigences strictes en matière de propreté, d'assainissement, d'éclairage et d'isolation des appareils mécaniques dangereux.",
+            B: "Elle instaura la responsabilité automatique de l'employeur pour tous les accidents survenus dans son entreprise.",
+            C: "Elle créa un Fonds national de prévention des accidents financé par des cotisations patronales obligatoires.",
+            D: "Elle établit la journée de travail de 10 heures comme durée maximale dans les ateliers mixtes hommes/femmes."
+        },
+        correct: "A",
+        explanation: "La loi du 12 juin 1893 sur l'hygiène et la sécurité impose pour la première fois aux manufactures des exigences strictes en matière de propreté, d'assainissement, d'éclairage, d'évacuation des vapeurs, et oblige l'isolement des appareils mécaniques dangereux. Son application sera étendue au secteur commercial par la loi du 11 juillet 1903."
+    },
+    {
+        id: 65,
+        section: "P3",
+        label: "Question 65 / 100",
+        text: "Quelle fut la portée de l'arrêt Teffaine du 16 juin 1896, qui constitua une étape vers la réforme de 1898 sur les accidents du travail ?",
+        options: {
+            A: "Il créa pour la première fois une obligation légale d'indemnisation automatique et intégrale des victimes d'accidents.",
+            B: "Il permit aux ouvriers d'engager la responsabilité de l'employeur sans avoir à prouver sa faute personnelle.",
+            C: "Il étendit la protection contre les accidents aux maladies professionnelles causées par les conditions de travail insalubres.",
+            D: "Il assouplit le régime de responsabilité du Code civil en reconnaissant une présomption de responsabilité du fait des choses."
+        },
+        correct: "D",
+        explanation: "L'arrêt Teffaine du 16 juin 1896 assouplit le régime du Code civil en reconnaissant la responsabilité du fait des choses (présomption de responsabilité). Ce n'est qu'avec la loi du 9 avril 1898 que s'établit la véritable responsabilité automatique fondée sur le risque professionnel, libérant l'ouvrier de la charge de la preuve."
+    },
+    {
+        id: 66,
+        section: "P3",
+        label: "Question 66 / 100",
+        text: "Qu'est-ce que l'Union sacrée, solennellement proclamée le 4 août 1914 au début de la Première Guerre mondiale ?",
+        options: {
+            A: "Un accord militaire entre la France et ses alliés britanniques et russes pour coordonner l'effort de guerre.",
+            B: "La décision de la CGT de transformer ses grèves en action politique pour obtenir des réformes sociales immédiates.",
+            C: "L'alliance politique et sociale visant à maintenir le travail national et l'effort de guerre en suspendant les conflits de classe.",
+            D: "Le programme commun établi par les partis de gauche pour résister à l'invasion allemande."
+        },
+        correct: "C",
+        explanation: "L'Union sacrée désigne l'alliance politique et sociale visant à maintenir le travail national et l'effort de guerre devant l'ennemi. Malgré l'assassinat de Jean Jaurès le 30 juillet 1914, le monde ouvrier et la CGT acceptèrent les ordres de mobilisation. Cette union favorisa la collaboration des partenaires sociaux et permit l'émergence des premières conventions collectives."
+    },
+    {
+        id: 67,
+        section: "P3",
+        label: "Question 67 / 100",
+        text: "Quel droit la loi du 27 décembre 1968 consacra-t-elle à l'intérieur même des locaux de l'entreprise, constituant une véritable révolution dans les relations sociales ?",
+        options: {
+            A: "Le droit d'exercer librement le droit syndical dans l'entreprise par la création de sections syndicales.",
+            B: "Le droit pour les délégués du personnel d'accéder librement à tous les locaux et documents de l'entreprise.",
+            C: "Le droit de grève préventif permettant aux syndicats d'agir avant l'éclatement de tout conflit collectif.",
+            D: "Le droit pour les comités d'entreprise de contrôler les décisions économiques des dirigeants."
+        },
+        correct: "A",
+        explanation: "La loi du 27 décembre 1968 consacre le droit d'exercer librement le droit syndical à l'intérieur même des locaux de l'entreprise par la création de sections syndicales. C'est une véritable révolution : avant 1968, le syndicat n'avait aucune présence légale au sein de l'entreprise."
+    },
+    {
+        id: 68,
+        section: "P3",
+        label: "Question 68 / 100",
+        text: "Quelle confédération syndicale d'inspiration chrétienne fut fondée le 2 novembre 1919, représentant un nouveau courant au sein du mouvement ouvrier ?",
+        options: {
+            A: "La CGC (Confédération générale des cadres), fondée pour défendre les intérêts des catégories supérieures.",
+            B: "La CFTC (Confédération française des travailleurs chrétiens).",
+            C: "La FO (Force ouvrière), née de la scission de la CGT pour résister à l'influence communiste.",
+            D: "La CGPF (Confédération générale de la production française), organisation patronale créée en 1919."
+        },
+        correct: "B",
+        explanation: "La CFTC (Confédération française des travailleurs chrétiens) fut fondée le 2 novembre 1919. Elle représentait un nouveau syndicalisme d'inspiration chrétienne, concurrent de la CGT. Parallèlement, l'organisation patronale CGPF (Confédération générale de la production française) fut créée en 1919."
+    },
+    {
+        id: 69,
+        section: "P2",
+        label: "Question 69 / 100",
+        text: "Par quelle loi le livret ouvrier fut-il définitivement aboli, après avoir exercé pendant plus d'un siècle un contrôle étroit sur la mobilité des travailleurs ?",
+        options: {
+            A: "La loi du 22 mars 1841 sur le travail des enfants.",
+            B: "La loi du 25 mai 1864 supprimant le délit de coalition.",
+            C: "La loi Waldeck-Rousseau du 21 mars 1884 sur les syndicats.",
+            D: "La loi du 2 juillet 1890."
+        },
+        correct: "D",
+        explanation: "Le livret ouvrier fut aboli par la loi du 2 juillet 1890. Il avait été rétabli en 1803, progressivement encadré par la loi de 1854 (interdiction pour les patrons de le conserver et d'y inscrire des annotations défavorables) et par la loi de 1861 (les avances ne sont plus mentionnées). Cette question figure dans l'annale 2024-2025 (question 4)."
+    },
+    {
+        id: 70,
+        section: "P2",
+        label: "Question 70 / 100",
+        text: "Comment le Code Napoléon de 1804 désignait-il la relation de travail salarié, ne lui consacrant que trois articles (1779 à 1781) ?",
+        options: {
+            A: "Le contrat de subordination volontaire entre un maître et son ouvrier qualifié.",
+            B: "Le contrat d'apprentissage, régi par les usages corporatifs de l'Ancien Régime.",
+            C: "Le louage de services (ou 'louage des domestiques et des ouvriers').",
+            D: "La convention d'emploi salarié, soumise aux principes généraux du droit des obligations."
+        },
+        correct: "C",
+        explanation: "Le Code civil de 1804 ignore le terme 'contrat de travail' et utilise l'expression 'louage des domestiques et des ouvriers' (articles 1779 à 1781). Il considère le travail comme un simple louage de services, rattaché aux dispositions générales du droit civil. C'est une des manifestations de l'absence du droit du travail comme discipline autonome au XIXe siècle."
+    },
+    {
+        id: 71,
+        section: "P2",
+        label: "Question 71 / 100",
+        text: "Qu'est-ce que la 'fièvre cotonneuse', maladie professionnelle décrite par l'enquête de Villermé dans les manufactures du XIXe siècle ?",
+        options: {
+            A: "Une épidémie de fièvre typhoïde provoquée par les mauvaises conditions sanitaires des logements ouvriers.",
+            B: "Une maladie pulmonaire causée par l'inhalation des poussières de textile qui contaminent l'air des manufactures de coton.",
+            C: "Un phénomène d'agitation sociale chronique caractéristique des ouvriers de l'industrie cotonnière.",
+            D: "Une forme de malnutrition sévère touchant les enfants travaillant dans les manufactures textiles."
+        },
+        correct: "B",
+        explanation: "La fièvre cotonneuse est une maladie pulmonaire causée par l'inhalation des poussières de textile qui contaminent l'air des manufactures de coton. Elle illustre la gravité des conditions sanitaires dans les usines du XIXe siècle, telles que révélées par l'enquête du docteur Villermé parue en 1840."
+    },
+    {
+        id: 72,
+        section: "P2",
+        label: "Question 72 / 100",
+        text: "Selon l'enquête de Villermé parue en 1840, quelle était la durée totale des journées de présence dans les manufactures de coton (incluant les pauses) ?",
+        options: {
+            A: "13 heures effectives de travail, souvent 15 heures de présence totale en comptant les pauses.",
+            B: "10 heures effectives, soit 12 heures de présence totale avec les pauses et déplacements.",
+            C: "12 heures effectives, parfois 13 heures de présence totale avec les pauses.",
+            D: "14 heures effectives, parfois 16 heures de présence totale avec les déplacements."
+        },
+        correct: "A",
+        explanation: "L'enquête de Villermé parue en 1840 révèle des journées de travail de 13 heures effectives, souvent 15 heures au total avec les pauses. Les conditions sont insalubres (fièvre cotonneuse). Un homme gagnait environ 2 francs par jour, une femme 1 franc et un enfant 0,75 franc. Au moindre incident, la famille sombrait dans la misère absolue."
+    },
+    {
+        id: 73,
+        section: "P3",
+        label: "Question 73 / 100",
+        text: "Qu'est-ce que le Congrès de Tours (29 décembre 1920) et quelle scission historique y fut consommée dans le mouvement socialiste français ?",
+        options: {
+            A: "La fusion de la CGT et de la CGTU en une seule organisation syndicale unifiée.",
+            B: "La décision des syndicats français de rejoindre la IIIe Internationale communiste.",
+            C: "La fondation de la SFIO par unification de toutes les tendances socialistes françaises en 1905.",
+            D: "La scission du parti socialiste sur la question de l'adhésion à la IIIe Internationale (Komintern), donnant naissance au PCF le 1er janvier 1922."
+        },
+        correct: "D",
+        explanation: "Au Congrès de Tours du 29 décembre 1920, la gauche française se déchira sur l'adhésion à la IIIe Internationale (Komintern) créée à Moscou en mars 1919. La majorité adhéra, donnant naissance au PCF (Parti communiste français) le 1er janvier 1922. La minorité refusant les conditions de Moscou se maintint dans la SFIO, qui redevint le premier parti ouvrier dès 1924 sous Léon Blum."
+    },
+    {
+        id: 74,
+        section: "P3",
+        label: "Question 74 / 100",
+        text: "Quel scandale politico-financier provoqua la journée d'émeutes du 6 février 1934, devant la Chambre des députés place de la Concorde ?",
+        options: {
+            A: "L'affaire Dreyfus, ressurgissant sous la IIIe République en raison des activités des ligues nationalistes.",
+            B: "Le scandale des dévaluations successives de la livre sterling et du dollar qui ruinèrent les épargnants français.",
+            C: "L'affaire Stavisky, scandaleuse manipulation financière ayant conduit au limogeage du préfet de police Jean Chiappe.",
+            D: "L'affaire de la Cagoule, réseau secret d'extrême droite préparant un coup d'État militaire."
+        },
+        correct: "C",
+        explanation: "La violente journée d'émeutes du 6 février 1934 fut déclenchée par le scandale politico-financier de l'affaire Stavisky, qui avait conduit au limogeage du préfet de police Jean Chiappe. Cet événement réveilla l'antiparlementarisme et favorisa l'agitation des ligues d'extrême droite, poussant en réaction la gauche à s'unir dans le Front Populaire."
+    },
+    {
+        id: 75,
+        section: "P3",
+        label: "Question 75 / 100",
+        text: "Quelle forme d'aide la loi du 14 juillet 1905 sur l'assistance publique instaura-t-elle au profit des personnes âgées de plus de 70 ans sans ressources ?",
+        options: {
+            A: "Un revenu de substitution versé par les caisses de retraite des corporations professionnelles.",
+            B: "Un régime de retraite contributif financé par les cotisations des travailleurs et des employeurs.",
+            C: "Une aide cofinancée par les communes et l'État prenant la forme d'une hospitalisation, d'un placement ou d'une allocation mensuelle.",
+            D: "Un système d'assurance sociale obligatoire couvrant les risques liés à la vieillesse et à l'invalidité."
+        },
+        correct: "C",
+        explanation: "La loi du 14 juillet 1905 sur l'assistance publique instaure une aide cofinancée par les communes et l'État au profit des personnes âgées de plus de 70 ans privées de ressources et incapables de travailler, prenant la forme d'une hospitalisation, d'un placement ou d'une allocation mensuelle. C'est une étape avant la création du véritable système de retraites en 1910."
+    },
+    {
+        id: 76,
+        section: "P3",
+        label: "Question 76 / 100",
+        text: "Quelle fut la portée précise de la loi du 30 mars 1900 sur la réduction progressive de la durée du travail dans les ateliers mixtes ?",
+        options: {
+            A: "Elle imposa progressivement la journée de 10 heures dans les ateliers mixtes : 11h initialement, puis 10h30, puis 10h au bout de quatre ans.",
+            B: "Elle instaura d'emblée la journée de 8 heures dans toutes les industries et manufactures du pays.",
+            C: "Le repos dominical obligatoire pour tous les travailleurs quel que soit leur secteur d'activité.",
+            D: "Elle limita la journée de travail à 12 heures dans les ateliers employant des femmes et des enfants."
+        },
+        correct: "A",
+        explanation: "La loi du 30 mars 1900 impose progressivement la journée de 10 heures dans les ateliers mixtes (11h initialement, 10h30 au bout de deux ans, puis 10h au bout de quatre ans). Cette dynamique aboutit à la grande loi du 23 avril 1919 qui posa le principe de la semaine de 48 heures."
+    },
+    {
+        id: 77,
+        section: "P3",
+        label: "Question 77 / 100",
+        text: "Par quel texte les délégués du personnel furent-ils définitivement rétablis après leur suppression sous le régime de Vichy ?",
+        options: {
+            A: "L'ordonnance du 22 février 1945 créant les comités d'entreprise.",
+            B: "La loi du 16 avril 1946.",
+            C: "La loi Auroux du 23 décembre 1982 sur le CHSCT.",
+            D: "La loi du 20 décembre 1993 créant la délégation unique du personnel."
+        },
+        correct: "B",
+        explanation: "Les délégués du personnel, créés par les accords de Matignon de 1936 et supprimés sous Vichy, furent rétablis par la loi du 16 avril 1946. Leur statut évolua ensuite notamment avec la loi du 20 décembre 1993 (délégation unique du personnel pour les entreprises de moins de 200 salariés) et les ordonnances Macron de 2017 (fusion dans le CSE)."
+    },
+    {
+        id: 78,
+        section: "P3",
+        label: "Question 78 / 100",
+        text: "Quelle protection fondamentale la loi du 13 juillet 1973 accorda-t-elle aux salariés face à l'arbitraire patronal en matière de rupture du contrat de travail ?",
+        options: {
+            A: "Elle institua un préavis obligatoire de six mois avant tout licenciement dans les entreprises de plus de 50 salariés.",
+            B: "Elle créa un droit de recours préventif permettant au salarié de bloquer son licenciement avant qu'il ne prenne effet.",
+            C: "Elle obligea l'employeur à obtenir une autorisation administrative préalable pour tout licenciement économique.",
+            D: "Elle imposa la nécessité absolue d'une cause réelle et sérieuse pour justifier tout licenciement."
+        },
+        correct: "D",
+        explanation: "La loi fondamentale du 13 juillet 1973 révolutionne le droit en imposant la nécessité absolue d'une cause réelle et sérieuse pour justifier tout licenciement, protégeant ainsi le salarié contre l'arbitraire patronal. Pour les licenciements économiques, la loi Aubry du 27 janvier 1993 accordera au juge un droit de contrôle sur la qualité des plans sociaux."
+    },
+    {
+        id: 79,
+        section: "P3",
+        label: "Question 79 / 100",
+        text: "Quel établissement public, créé par l'ordonnance du 13 juillet 1967, détenait le monopole du placement de la main-d'œuvre avant de fusionner avec les ASSEDIC pour devenir Pôle Emploi ?",
+        options: {
+            A: "L'ANPE (Agence nationale pour l'emploi).",
+            B: "Le Fonds national de l'emploi, créé en 1963 pour financer les reconversions professionnelles.",
+            C: "L'Office du travail, fondé en 1891 pour mener des enquêtes et statistiques sur le monde du travail.",
+            D: "La CGPF, devenue CNPF puis MEDEF, organisme patronal chargé du placement des travailleurs."
+        },
+        correct: "A",
+        explanation: "L'ANPE (Agence nationale pour l'emploi) fut créée par l'ordonnance du 13 juillet 1967, établissement public détenant le monopole du placement de la main-d'œuvre. Elle fusionnera plus tard avec les ASSEDIC pour devenir Pôle Emploi, devenu France Travail."
+    },
+    {
+        id: 80,
+        section: "P3",
+        label: "Question 80 / 100",
+        text: "Quelle fusion majeure des instances représentatives du personnel les ordonnances Macron de 2017 instaurèrent-elles dans les entreprises ?",
+        options: {
+            A: "La fusion du conseil d'administration et du comité d'entreprise pour renforcer la co-décision.",
+            B: "La création d'une instance unique réunissant patronat et syndicats pour les négociations de branche.",
+            C: "La suppression des délégués du personnel au profit d'un renforcement exclusif des sections syndicales.",
+            D: "La création du CSE (Comité social et économique), fusionnant les délégués du personnel, le CE et le CHSCT."
+        },
+        correct: "D",
+        explanation: "Les ordonnances Macron de 2017 opèrent la fusion des instances représentatives (DP, CE, CHSCT) dans le CSE (Comité social et économique) et plafonnent les indemnités prud'homales, dans l'objectif de flexibilisation du marché du travail."
+    },
+    {
+        id: 81,
+        section: "P1",
+        label: "Question 81 / 100",
+        text: "Dans la seigneurie foncière féodale, qu'est-ce que le champart, l'une des formes de redevances des tenures perpétuelles ?",
+        options: {
+            A: "Une somme d'argent annuelle fixe versée par le tenancier au seigneur pour l'usage de sa tenure.",
+            B: "Un impôt spécifique aux vignerons, représentant entre 1/4 et 1/2 de leur production de vin.",
+            C: "Une redevance consistant en une part de la récolte (souvent 1/6 ou 1/7) prélevée sur le champ du tenancier.",
+            D: "Une taxe arbitraire frappant tous les habitants de la seigneurie, quelle que soit leur condition sociale."
+        },
+        correct: "C",
+        explanation: "Le champart est une redevance consistant en une part de la récolte (souvent 1/6 ou 1/7) prélevée sur le champ du tenancier. À ne pas confondre avec la censive (somme d'argent fixe) ou le complant, spécifique à la vigne, où le vigneron donne entre 1/4 et 1/2 de sa production."
+    },
+    {
+        id: 82,
+        section: "P1",
+        label: "Question 82 / 100",
+        text: "Parmi les tenures à temps dans la seigneurie féodale, quelle était la nature exacte du métayage ?",
+        options: {
+            A: "Une jouissance temporaire de la terre contre le paiement d'un loyer fixe déterminé à l'avance.",
+            B: "Un contrat de partage de la récolte entre le propriétaire et le cultivateur, pour une durée limitée.",
+            C: "Un accord par lequel le vigneron cède entre 1/4 et 1/2 de sa production au seigneur foncier.",
+            D: "Une tenure héréditaire accordée aux lides (colons germaniques) en échange de leur service militaire."
+        },
+        correct: "B",
+        explanation: "Le métayage est un contrat de partage de la récolte entre le propriétaire (seigneur) et le cultivateur, pour une durée limitée. Le bail à ferme muable est la jouissance temporaire contre loyer fixe. Le métayage a été converti en bail rural par les lois du 13 avril 1946 et du 1er août 1984."
+    },
+    {
+        id: 83,
+        section: "P3",
+        label: "Question 83 / 100",
+        text: "Quel âge d'entrée au travail et quelle innovation institutionnelle majeure la loi du 19 mai 1874 introduisit-elle par rapport à la loi de 1841 ?",
+        options: {
+            A: "12 ans, avec la création d'un corps professionnel d'inspecteurs du travail chargés de contrôler l'application des règles.",
+            B: "10 ans, avec la création d'une police judiciaire spécialisée dans la lutte contre le travail des enfants.",
+            C: "14 ans, avec l'institution d'un mécanisme d'amendes administratives pour les employeurs contrevenants.",
+            D: "16 ans, avec l'obligation pour les employeurs d'afficher les règlements du travail dans leurs ateliers."
+        },
+        correct: "A",
+        explanation: "La loi du 19 mai 1874 fixe l'âge d'entrée au travail à 12 ans et crée surtout les inspections du travail, premier corps de fonctionnaires professionnels chargés de contrôler l'application des règles. C'est l'innovation institutionnelle décisive : la loi de 1841 n'avait que des inspecteurs bénévoles issus du milieu industriel, sans pouvoir coercitif réel."
+    },
+    {
+        id: 84,
+        section: "P3",
+        label: "Question 84 / 100",
+        text: "Par quel texte et à quelle date le premier ministère du travail fut-il créé en France, sous quel gouvernement ?",
+        options: {
+            A: "Par une loi du 22 janvier 1891, créant simultanément le Conseil supérieur du travail.",
+            B: "Par une loi du 28 décembre 1910, associant la création du ministère à celle du Code du travail.",
+            C: "Par une ordonnance du 13 décembre 1892, réorganisant les corps d'inspection du travail.",
+            D: "Par le décret du 25 octobre 1906, sous le gouvernement de Georges Clemenceau."
+        },
+        correct: "D",
+        explanation: "Le premier ministère du travail et de la prévoyance sociale fut créé par le décret du 25 octobre 1906, sous le gouvernement de Georges Clemenceau. Auparavant, existaient le Conseil supérieur du travail (22 janvier 1891), l'Office du travail (20 juillet 1891) et une branche 'travail' au sein du ministère du commerce et de l'industrie (1899)."
+    },
+    {
+        id: 85,
+        section: "P3",
+        label: "Question 85 / 100",
+        text: "Quelle fut la cause principale de la 'pause' sociale décrétée par Léon Blum en février 1937, mettant fin à l'élan réformateur du Front Populaire ?",
+        options: {
+            A: "L'opposition systématique du Sénat qui bloqua toutes les lois sociales adoptées par la Chambre des députés.",
+            B: "La fuite des capitaux, la dévaluation du franc en octobre 1936 et les déchirements liés à la guerre d'Espagne.",
+            C: "La victoire électorale de la droite aux élections partielles qui priva le gouvernement de sa majorité.",
+            D: "La grève générale lancée par la CGT qui paralysa l'économie et força Blum à suspendre ses réformes."
+        },
+        correct: "B",
+        explanation: "Face à la fuite des capitaux, à la dévaluation du franc en octobre 1936 et aux déchirements liés à la guerre d'Espagne (qui divisait la gauche entre communistes favorables à l'intervention et radicaux opposés), Léon Blum fut contraint de décréter une 'pause' sociale en février 1937. Le gouvernement Blum tomba en avril 1938."
+    },
+    {
+        id: 86,
+        section: "P2",
+        label: "Question 86 / 100",
+        text: "Lors de quelle occasion les ouvriers français rencontrèrent-ils les Trade Unions britanniques, ce qui stimula leur conscience politique et contribua à la publication du Manifeste des Soixante en 1864 ?",
+        options: {
+            A: "Lors du Congrès de l'Internationale ouvrière tenu à Paris en 1862 sous la présidence de Karl Marx.",
+            B: "Lors d'une délégation syndicale envoyée à Manchester en 1860 à l'initiative du mouvement républicain.",
+            C: "Lors de l'exposition universelle de Londres en 1862, financée par Napoléon III pour les délégués ouvriers français.",
+            D: "Lors de l'exposition universelle de Philadelphie en 1876, première délégation autorisée par l'Assemblée nationale."
+        },
+        correct: "C",
+        explanation: "Napoléon III finança des délégations ouvrières à l'exposition universelle de Londres en 1862. C'est là que les ouvriers français rencontrèrent les Trade Unions britanniques, ce qui stimula leur conscience politique. Ces contacts débouchèrent sur la publication du Manifeste des 60 en 1864 et sur la création de la Première Internationale ouvrière."
+    },
+    {
+        id: 87,
+        section: "P2",
+        label: "Question 87 / 100",
+        text: "Qu'est-ce que le suffrage censitaire, en vigueur sous la monarchie de Juillet (1830-1848) dirigée par François Guizot ?",
+        options: {
+            A: "Un système électoral fondé sur la compétence professionnelle, réservant le vote aux membres des professions libérales.",
+            B: "Un mode de scrutin proportionnel attribuant plusieurs votes aux contribuables les plus importants.",
+            C: "Un régime dans lequel les ouvriers votaient par l'intermédiaire de leurs délégués corporatifs élus.",
+            D: "Un système électoral réservant le droit de vote aux citoyens payant un certain montant d'impôt, excluant de fait les classes populaires."
+        },
+        correct: "D",
+        explanation: "Le suffrage censitaire est un système électoral où le droit de vote est réservé aux citoyens payant un certain montant d'impôt (le cens), excluant de fait les classes populaires. Sous la monarchie de Juillet, le ministre François Guizot refusait d'élargir ce corps électoral, ce qui contribua à l'instabilité politique et à la Révolution de 1848."
+    },
+    {
+        id: 88,
+        section: "P2",
+        label: "Question 88 / 100",
+        text: "Quelle fut la portée exacte du décret du 11 août 1789 sur le régime féodal, adopté au lendemain de la Nuit du 4 août 1789 ?",
+        options: {
+            A: "Il supprima le servage et la mainmorte, mais maintint l'obligation de racheter les droits réels seigneuriaux comme le cens.",
+            B: "Il abolit la propriété foncière aristocratique et redistribua immédiatement les terres aux paysans.",
+            C: "Il supprima l'ensemble des droits seigneuriaux sans aucune indemnité pour les propriétaires nobles.",
+            D: "Il proclama la liberté individuelle et supprima toutes les corporations et les confréries religieuses."
+        },
+        correct: "A",
+        explanation: "Le décret du 11 août 1789 supprime le servage et la mainmorte. Cependant, une distinction juridique est maintenue : les droits personnels (liés à l'usurpation féodale) sont abolis sans indemnité, mais les droits réels (comme le cens, considérés comme des contrats sur la terre) doivent être rachetés. Ce n'est que le 17 juillet 1793, sous la Convention, que tous les droits seigneuriaux sont abolis sans aucune indemnité."
+    },
+    {
+        id: 89,
+        section: "P2",
+        label: "Question 89 / 100",
+        text: "Quelle assemblée révolutionnaire supprima définitivement et sans indemnité tous les droits seigneuriaux le 17 juillet 1793 ?",
+        options: {
+            A: "L'Assemblée Constituante.",
+            B: "L'Assemblée Législative.",
+            C: "La Convention.",
+            D: "Le Comité de salut public."
+        },
+        correct: "C",
+        explanation: "C'est la Convention qui, le 17 juillet 1793, supprima définitivement tous les droits seigneuriaux sans aucune indemnité. L'Assemblée Constituante (décret du 11 août 1789) n'avait supprimé que les droits personnels, maintenant l'obligation de racheter les droits réels. Cette question figure dans les deux annales fournies."
+    },
+    {
+        id: 90,
+        section: "P2",
+        label: "Question 90 / 100",
+        text: "Qu'est-ce que la loi du Maximum général adoptée le 4 mai 1793 par la Convention, dans le cadre de la révolution 'populaire et égalitaire' ?",
+        options: {
+            A: "La loi qui fixa un plafond maximum à la taille des corporations autorisées à opérer dans les manufactures.",
+            B: "Un texte d'économie dirigée bloquant les prix des denrées et les salaires pour freiner l'inflation liée à la dévaluation des assignats.",
+            C: "La loi qui établit un plafond maximum aux journées de travail dans les manufactures, fixé à 12 heures.",
+            D: "Un décret fixant un maximum au loyer des logements ouvriers pour lutter contre la crise du logement urbain."
+        },
+        correct: "B",
+        explanation: "La loi du Maximum général (4 mai 1793) est un texte d'économie dirigée qui bloque les prix des denrées et les salaires pour freiner l'inflation liée à la dévaluation des assignats (papier-monnaie révolutionnaire). Ce système s'effondre avec la chute de Robespierre en juillet 1794. La Convention créa aussi des greniers d'abondance et instaura le rationnement."
+    },
+    {
+        id: 91,
+        section: "P2",
+        label: "Question 91 / 100",
+        text: "Qu'est-ce que le marchandage, dont l'abolition fut l'une des premières revendications obtenues par la Commission du Luxembourg en mars 1848 ?",
+        options: {
+            A: "La pratique consistant à payer les ouvriers en bons d'achat échangeables uniquement dans les boutiques du patron.",
+            B: "Le système d'avances sur salaire qui maintenait les ouvriers dans un état de dépendance totale vis-à-vis de leur employeur.",
+            C: "La pratique des employeurs de faire varier arbitrairement les salaires en fonction des fluctuations de la demande du marché.",
+            D: "Un système d'exploitation où un sous-entrepreneur recrute de la main-d'œuvre pour un entrepreneur principal, en prélevant un bénéfice sur le salaire des ouvriers."
+        },
+        correct: "D",
+        explanation: "Le marchandage est un système d'exploitation où un sous-entrepreneur recrute de la main-d'œuvre pour le compte d'un entrepreneur principal, en prélevant un bénéfice sur le salaire déjà faible des ouvriers. Son abolition fut obtenue par la Commission du Luxembourg le 2 mars 1848. La question figure dans l'annale 2024-2025."
+    },
+    {
+        id: 92,
+        section: "P1",
+        label: "Question 92 / 100",
+        text: "Quelle était la nature juridique et sociale des compagnonnages créés clandestinement par les compagnons sous l'Ancien Régime ?",
+        options: {
+            A: "Des associations secrètes et interdites qui organisaient des boycotts ('interdits') de certains maîtres et géraient le placement via le rouleur.",
+            B: "Des associations légalement reconnues sous réserve d'une autorisation préalable de la corporation.",
+            C: "Des mutuelles d'entraide financées par des cotisations volontaires et reconnues par les autorités royales.",
+            D: "Des organisations paramilitaires chargées d'assurer la protection physique des compagnons lors des conflits."
+        },
+        correct: "A",
+        explanation: "Les compagnonnages sont des associations secrètes et interdites créées par les compagnons pour défendre leurs intérêts face aux maîtres. Ils organisaient des 'interdits' (boycott de certains maîtres) et géraient le placement via le rouleur (aubergiste centralisant l'offre de travail). En 1724, une grève d'ampleur à Paris fit créer une caisse de secours mutuel pour soutenir les grévistes."
+    },
+    {
+        id: 93,
+        section: "P1",
+        label: "Question 93 / 100",
+        text: "En quoi consistait le 'tour de France' effectué par les compagnons dans le cadre du compagnonnage sous l'Ancien Régime ?",
+        options: {
+            A: "Une inspection annuelle effectuée par les jurés de la corporation pour vérifier la qualité du travail dans les ateliers.",
+            B: "Un périple à travers les différentes villes de France pour travailler successivement auprès de divers maîtres afin de parfaire leur art.",
+            C: "Un pèlerinage obligatoire imposé par les corporations pour obtenir la qualification de compagnon.",
+            D: "Une tournée commerciale organisée par les marchands forains pour écouler leurs marchandises dans les foires régionales."
+        },
+        correct: "B",
+        explanation: "Les compagnons effectuaient souvent leur 'tour de France' pour parfaire leur art, travaillant successivement dans différentes villes auprès de divers maîtres. Ce voyage initiatique permettait d'acquérir une maîtrise technique diversifiée et contribuait à la diffusion des savoir-faire artisanaux à travers tout le territoire."
+    },
+    {
+        id: 94,
+        section: "P2",
+        label: "Question 94 / 100",
+        text: "Quelle inégalité fondamentale le Code pénal de 1810 (articles 414 et suivants) consacrait-il dans le traitement des coalitions patronales et ouvrières ?",
+        options: {
+            A: "Les ouvriers pouvaient former coalitions défensives mais non offensives, contrairement aux patrons qui bénéficiaient d'une totale liberté.",
+            B: "Les coalitions patronales étaient totalement libres en toutes circonstances, tandis que les coalitions ouvrières étaient pénalement réprimées sans exception.",
+            C: "Les patrons étaient punis d'amende en cas de baisse injuste des salaires, tandis que les ouvriers risquaient la prison dès qu'ils cessaient le travail collectivement.",
+            D: "Les ouvriers étaient poursuivis uniquement si leur coalition causait des violences, les patrons l'étant pour toute entente sur les salaires."
+        },
+        correct: "C",
+        explanation: "Il existait une inégalité flagrante : les patrons étaient punis d'amende s'ils baissaient injustement les salaires, alors que les ouvriers risquaient la prison dès qu'ils s'entendaient pour cesser le travail, même si leur revendication était juste. Ce déséquilibre entre coalitions salariales et patronales persistera jusqu'à la loi du 25 mai 1864."
+    },
+    {
+        id: 95,
+        section: "P3",
+        label: "Question 95 / 100",
+        text: "Pourquoi le décret du 11 juin 1809 sur les conseils de Prud'hommes représenta-t-il une limitation grave pour les ouvriers lors de sa création à Lyon ?",
+        options: {
+            A: "Parce qu'il assura la domination des fabricants sur les chefs d'atelier et excluait totalement les simples ouvriers de la juridiction.",
+            B: "Parce qu'il limita la compétence des Prud'hommes aux seuls litiges portant sur moins de 150 francs.",
+            C: "Parce qu'il interdit aux ouvriers syndiqués d'être élus comme représentants dans ces juridictions.",
+            D: "Parce qu'il imposa un droit de timbre élevé que seuls les patrons pouvaient se permettre de payer pour saisir le conseil."
+        },
+        correct: "A",
+        explanation: "Le décret du 11 juin 1809 assure la domination des fabricants sur les chefs d'atelier. Les simples ouvriers sont totalement exclus de cette juridiction, qui ne deviendra réellement paritaire qu'en 1848. La question sur la création des Prud'hommes de Lyon figure dans le SUJET_HISTOIRE.pdf."
+    },
+    {
+        id: 96,
+        section: "P3",
+        label: "Question 96 / 100",
+        text: "Quelle distinction fondamentale la loi du 11 février 1950 sur les conventions collectives introduisit-elle, relançant la pratique conventionnelle après-guerre ?",
+        options: {
+            A: "Elle distingua les conventions d'entreprise des conventions de branche, donnant priorité aux premières.",
+            B: "Elle établit une différence entre conventions à durée déterminée et indéterminée, imposant l'obligation de renégocier périodiquement.",
+            C: "Elle sépara les conventions individuelles des conventions collectives, fixant leur hiérarchie.",
+            D: "Elle distingua formellement les conventions ordinaires des conventions susceptibles d'être étendues à toute une branche professionnelle par les pouvoirs publics."
+        },
+        correct: "D",
+        explanation: "La loi du 11 février 1950 distingue formellement les conventions ordinaires des conventions susceptibles d'être étendues à toute une branche par les pouvoirs publics, donnant une nouvelle impulsion à la pratique conventionnelle après le gel des salaires de la période d'après-guerre. Elle créa également le SMIG (Salaire minimum interprofessionnel garanti)."
+    },
+    {
+        id: 97,
+        section: "P3",
+        label: "Question 97 / 100",
+        text: "Quelle organisation syndicale est née en 1947 de la scission de la CGT, résistant à l'influence communiste croissante sur sa direction ?",
+        options: {
+            A: "La CFDT (Confédération française démocratique du travail).",
+            B: "FO (Force ouvrière).",
+            C: "La CGC (Confédération générale des cadres).",
+            D: "La CFTC (Confédération française des travailleurs chrétiens)."
+        },
+        correct: "B",
+        explanation: "FO (Force ouvrière) est née en 1947 de la scission de la CGT. Cette scission était liée à la résistance d'une minorité à l'influence communiste croissante sur la direction de la CGT. Cette question figure explicitement dans l'annale 2023-2024 (question 1 des questions courtes)."
+    },
+    {
+        id: 98,
+        section: "P3",
+        label: "Question 98 / 100",
+        text: "Quel principe la loi du 21 août 2007 introduisit-elle dans le secteur des transports publics en cas de grève ?",
+        options: {
+            A: "L'interdiction définitive de toute grève dans les transports publics pour garantir la liberté de circulation des citoyens.",
+            B: "L'obligation pour les grévistes des transports de respecter un préavis de 10 jours au lieu de 5.",
+            C: "L'instauration d'un service minimum dans les transports publics en cas de grève, assurant un niveau de desserte de base.",
+            D: "La création d'un tribunal arbitral spécialisé pour résoudre les conflits collectifs dans le secteur des transports."
+        },
+        correct: "C",
+        explanation: "La loi du 21 août 2007 instaure un principe de continuité du service dans les transports publics en cas de grève (service minimum). C'est l'une des lois qui précisent les limites et les protections du droit de grève, aux côtés de la loi du 31 juillet 1963 (préavis de 5 jours dans les services publics) et de la loi du 3 janvier 1972 (interdiction du recours à l'intérim pour remplacer les grévistes)."
+    },
+    {
+        id: 99,
+        section: "P3",
+        label: "Question 99 / 100",
+        text: "Quelle fut la signification historique durable de la Semaine sanglante (21-28 mai 1871) pour le mouvement ouvrier français ?",
+        options: {
+            A: "Elle entraîna immédiatement l'interdiction de toute organisation syndicale et ouvrière pour une durée de 20 ans.",
+            B: "Elle provoqua la dissolution de la CGT et l'exil forcé de ses dirigeants à Londres et à Bruxelles.",
+            C: "Elle fut rapidement dépassée car le gouvernement accorda une amnistie générale aux communards dès le mois de juillet 1871.",
+            D: "Elle forgea durablement la conscience politique de la classe ouvrière et alimena la méfiance radicale envers l'État bourgeois."
+        },
+        correct: "D",
+        explanation: "La chute de la Commune lors de la Semaine sanglante (21-28 mai 1871, 4 000 morts, 12 000 arrestations) forge durablement la conscience politique de la classe ouvrière et alimena sa méfiance radicale envers l'État bourgeois. Le gouvernement de Thiers fit voter la loi du 14 mars 1872 interdisant la Première Internationale, et le mouvement ouvrier mit de longues années à se reconstruire."
+    },
+    {
+        id: 100,
+        section: "P3",
+        label: "Question 100 / 100",
+        text: "Que disposa la loi du 16 août 1940 du régime de Vichy concernant les grandes confédérations syndicales libres, dans l'objectif de 'redressement moral' de la France ?",
+        options: {
+            A: "Elle interdit les grandes confédérations syndicales libres, imposant un maximum d'un syndicat unique à adhésion obligatoire par profession.",
+            B: "Elle nationalisa les syndicats en les plaçant sous le contrôle direct du ministère de la Production industrielle.",
+            C: "Elle transforma les syndicats libres en associations de loisirs, leur interdisant toute activité revendicative.",
+            D: "Elle fusionner toutes les organisations syndicales en une confédération unique sous l'autorité du maréchal Pétain."
+        },
+        correct: "A",
+        explanation: "La loi du 16 août 1940 interdit les grandes confédérations syndicales libres, les remplaçant par un syndicat unique et à adhésion obligatoire par profession, tout en supprimant formellement le droit de grève. Ce système corporatif culmine avec la Charte du travail du 4 octobre 1941, qui divise l'économie en 25 familles professionnelles. Dans les faits, ces organismes n'eurent qu'une existence nominale et artificielle."
+    }
+
 ];
 
         let currentSection = 'all';
         // Structure de sauvegarde locale : { questionId: { selectedOption: 'A', validated: true } }
-        let userProgress = JSON.parse(localStorage.getItem('qcm_progress_save')) || {};
+        let userProgress = JSON.parse(localStorage.getItem('qcm_progress_save_histoire')) || {};
 
         // INITIALISATION AU CHARGEMENT
         document.addEventListener("DOMContentLoaded", () => {
@@ -174,7 +1573,7 @@ const questionsData = [
             };
 
             // Sauvegarder l'état
-            localStorage.setItem('qcm_progress_save', JSON.stringify(userProgress));
+            localStorage.setItem('qcm_progress_save_histoire', JSON.stringify(userProgress));
             
             // Rafraîchir visuellement la liste sans tout recharger
             renderQuestions();
@@ -188,7 +1587,7 @@ const questionsData = [
             }
 
             userProgress[questionId].validated = true;
-            localStorage.setItem('qcm_progress_save', JSON.stringify(userProgress));
+            localStorage.setItem('qcm_progress_save_histoire', JSON.stringify(userProgress));
 
             // Mettre à jour l'affichage de la carte et du score global
             renderQuestions();
@@ -238,7 +1637,7 @@ const questionsData = [
         // RÉINITIALISATION COMPLÈTE
         function resetApp() {
             if (confirm("Es-tu sûre de vouloir réinitialiser tout ton historique de révisions ?")) {
-                localStorage.removeItem('qcm_progress_save');
+                localStorage.removeItem('qcm_progress_save_histoire');
                 userProgress = {};
                 switchSection('all');
                 updateScoreAndProgress();
